@@ -1,4 +1,3 @@
-<!-- them moi -->
 
 <!-- Sản phẩm nổi bật -->
 <div class="wrap-product wrap-content">
