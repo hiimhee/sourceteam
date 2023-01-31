@@ -56,7 +56,15 @@ $linkDelete = "index.php?com=news&act=delete_cat&type=" . $type;
                         <th class="align-middle" style="width:30%">Tiêu đề</th>
                         <?php if (isset($config['news'][$type]['check_cat'])) {
                             foreach ($config['news'][$type]['check_cat'] as $key => $value) { ?>
-                                <th class="align-middle text-center"><?= $value ?></th>
+                                <th class="align-middle text-center status-box">
+                                    <span><?= $value ?></span>
+                                    <?php if (isset($config['news'][$type]['check_all_cat']) && $config['news'][$type]['check_all_cat'] == true) { ?>
+                                        <span class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="status-checkall" data-status="<?= $key ?>" <?= $func->ischecked($items, $key); ?>>
+                                            <label for="status-checkall" class="custom-control-label"></label>
+                                        </span>
+                                    <?php } ?>
+                                </th>
                         <?php }
                         } ?>
                         <th class="align-middle text-center">Thao tác</th>

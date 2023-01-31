@@ -101,6 +101,7 @@ $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000*/
 $nametype = "slide";
 $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Slideshow";
 $config['photo']['man_photo'][$nametype]['check_photo'] = array("hienthi" => "Hiển thị");
+$config['photo']['man_photo'][$nametype]['check_all'] = false;
 $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
 $config['photo']['man_photo'][$nametype]['images_photo'] = true;
 $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
@@ -133,6 +134,7 @@ $config['photo']['man_photo'][$nametype]['css_hinh'] = '';//background:#000
 $nametype = "social";
 $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Social";
 $config['photo']['man_photo'][$nametype]['check_photo'] = array("hienthi" => "Hiển thị");
+$config['photo']['man_photo'][$nametype]['check_all'] = false;
 $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
 $config['photo']['man_photo'][$nametype]['images_photo'] = true;
 $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
@@ -148,6 +150,7 @@ $config['photo']['man_photo'][$nametype]['css_hinh'] = '';//background:#000
 $nametype = "video";
 $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Video";
 $config['photo']['man_photo'][$nametype]['check_photo'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
+$config['photo']['man_photo'][$nametype]['check_all'] = false;
 $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
 $config['photo']['man_photo'][$nametype]['video_photo'] = true;
 $config['photo']['man_photo'][$nametype]['name_photo'] = true;

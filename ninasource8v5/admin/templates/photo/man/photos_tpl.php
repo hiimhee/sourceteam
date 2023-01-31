@@ -18,11 +18,11 @@ $linkDelete = "index.php?com=photo&act=delete_photo&type=" . $type;
 
 <!-- Main content -->
 <section class="content">
-    <?php if($config['photo']['man_photo'][$type]['notadd']!='khongthemxoa') { ?>
-    <div class="card-footer text-sm sticky-top">
-        <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-        <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-    </div>
+    <?php if ($config['photo']['man_photo'][$type]['notadd'] != 'khongthemxoa') { ?>
+        <div class="card-footer text-sm sticky-top">
+            <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+            <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+        </div>
     <?php } ?>
     <div class="card card-primary card-outline text-sm mb-0">
         <div class="card-header">
@@ -53,7 +53,15 @@ $linkDelete = "index.php?com=photo&act=delete_photo&type=" . $type;
                         <?php } ?>
                         <?php if (isset($config['photo']['man_photo'][$type]['check_photo'])) {
                             foreach ($config['photo']['man_photo'][$type]['check_photo'] as $key => $value) { ?>
-                                <th class="align-middle text-center"><?= $value ?></th>
+                                <th class="align-middle text-center status-box">
+                                    <span><?= $value ?></span>
+                                    <?php if (isset($config['photo']['man_photo'][$type]['check_all']) && $config['photo']['man_photo'][$type]['check_all'] == true) { ?>
+                                        <span class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="status-checkall" data-status="<?= $key ?>" <?= $func->ischecked($items, $key); ?>>
+                                            <label for="status-checkall" class="custom-control-label"></label>
+                                        </span>
+                                    <?php } ?>
+                                </th>
                         <?php }
                         } ?>
                         <th class="align-middle text-center">Thao tác</th>
@@ -109,8 +117,8 @@ $linkDelete = "index.php?com=photo&act=delete_photo&type=" . $type;
                                 } ?>
                                 <td class="align-middle text-center text-md text-nowrap">
                                     <a class="text-primary mr-2" href="<?= $linkEdit ?>&id=<?= $items[$i]['id'] ?>" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <?php if($config['photo']['man_photo'][$type]['notadd']!='khongthemxoa') { ?>
-                                    <a class="text-danger" id="delete-item" data-url="<?= $linkDelete ?>&id=<?= $items[$i]['id'] ?>" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <?php if ($config['photo']['man_photo'][$type]['notadd'] != 'khongthemxoa') { ?>
+                                        <a class="text-danger" id="delete-item" data-url="<?= $linkDelete ?>&id=<?= $items[$i]['id'] ?>" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -125,10 +133,10 @@ $linkDelete = "index.php?com=photo&act=delete_photo&type=" . $type;
             <?= $paging ?>
         </div>
     <?php } ?>
-    <?php if($config['photo']['man_photo'][$type]['notadd']!='khongthemxoa') { ?>
-    <div class="card-footer text-sm">
-        <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-        <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-    </div>
+    <?php if ($config['photo']['man_photo'][$type]['notadd'] != 'khongthemxoa') { ?>
+        <div class="card-footer text-sm">
+            <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+            <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+        </div>
     <?php } ?>
 </section>
