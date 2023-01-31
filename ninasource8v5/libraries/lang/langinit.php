@@ -1,4 +1,5 @@
 <?php
+
 $columnarr = array(
     "title" => 'TEXT',
     "keywords" => 'TEXT',
@@ -89,5 +90,5 @@ function deleteLangInit($lang)
     }
 }
 
-	// createLangInit();
-	// deleteLangInit('cn');
+// createLangInit();
+// deleteLangInit('cn');
