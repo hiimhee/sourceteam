@@ -1,4 +1,4 @@
-!/ninasource8v5/caches/.htaccess
 /ninasource8v5/caches/*
+!/ninasource8v5/caches/.htaccess
 /ninasource8v5/logs/*
 /ninasource8v5/thumbs/*
