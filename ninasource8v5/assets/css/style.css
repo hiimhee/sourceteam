@@ -32,6 +32,7 @@ img{max-width:100%;height:auto;vertical-align:top}
 a,input,textarea{outline:none;padding:0px}
 a{text-decoration:none!important}
 input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+html,*{cursor: none !important;}
 .w-clear:after{display:block;content:"";clear:both}
 .hidden{display:none}
 .clear{clear:both}

@@ -789,6 +789,17 @@ NN_FRAMEWORK.doihinh = function(){
 		});
 	}
 };
+
+NN_FRAMEWORK.MagicMouse = function(){
+	magicMouse({
+  "hoverEffect": "circle-move",//pointer-overlay, pointer-blur,
+	"cursorOuter": "circle-basic", //circle-basic, disable
+	"defaultCursor": false,
+	"outerWidth": 40,
+  "outerHeight": 40,
+});
+}
+
 /* Ready */
 $(document).ready(function () {
 	NN_FRAMEWORK.Lazys();
@@ -814,5 +825,6 @@ $(document).ready(function () {
 	NN_FRAMEWORK.AutoHeight();
 	NN_FRAMEWORK.LikeProduct();
 	NN_FRAMEWORK.doigia();
-	NN_FRAMEWORK.doihinh();
+	NN_FRAMEWORK.doihinh()
+	NN_FRAMEWORK.MagicMouse();
 });

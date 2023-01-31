@@ -23,6 +23,7 @@ $css->set("owlcarousel2/owl.theme.default.css");
 // $css->set("fileuploader/font-fileuploader.css");
 // $css->set("fileuploader/jquery.fileuploader.min.css");
 // $css->set("fileuploader/jquery.fileuploader-theme-dragdrop.css");
+$css->set("magicmouse/magic-mouse.css");
 $css->set("css/style.css");
 $css->set("css/style-responsive.css");
 echo $css->get();

@@ -43,6 +43,7 @@
     //$js->set("datetimepicker/jquery.mousewheel.js");
     //$js->set("datetimepicker/jquery.datetimepicker.js");
     $js->set("js/functions.js");
+    $js->set("magicmouse/magic_mouse.js");
     //$js->set("js/comment.js");
     $js->set("js/apps.js");
     echo $js->get();
