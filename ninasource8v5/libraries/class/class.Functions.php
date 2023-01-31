@@ -11,6 +11,21 @@ class Functions
         $this->d = $d;
         $this->cache = $cache;
     }
+
+    function ischecked($list, $status)
+    {
+        $checked = '';
+        foreach ($list as $k => $v) {
+            $sttarray = (!empty($v['status'])) ? explode(',', $v['status']) : array();
+            foreach ($sttarray as $k1 => $v1) {
+                if ($v1 == $status) {
+                    $checked = 'checked';
+                }
+            }
+        }
+        return $checked;
+    }
+
     public function GetWeekdays( $ngaytao = 0 , $full = 1 ) {
         if($ngaytao=='' or $ngaytao==0) return false;
         $str = date('Y-m-d H:i:s', $ngaytao);

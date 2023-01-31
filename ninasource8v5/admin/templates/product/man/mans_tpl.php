@@ -77,7 +77,7 @@ $copyImg = (isset($config['product'][$type]['copy_image']) && $config['product']
                         <?php if (isset($config['product'][$type]['show_images']) && $config['product'][$type]['show_images'] == true) { ?>
                             <th class="align-middle">Hình</th>
                         <?php } ?>
-                        <?php if(isset($config['product'][$type]['show_images2']) && $config['product'][$type]['show_images2'] == true) { ?>
+                        <?php if (isset($config['product'][$type]['show_images2']) && $config['product'][$type]['show_images2'] == true) { ?>
                             <th class="align-middle">Hình 2</th>
                         <?php } ?>
                         <th class="align-middle" style="width:30%">Tiêu đề</th>
@@ -86,7 +86,15 @@ $copyImg = (isset($config['product'][$type]['copy_image']) && $config['product']
                         <?php } ?>
                         <?php if (isset($config['product'][$type]['check'])) {
                             foreach ($config['product'][$type]['check'] as $key => $value) { ?>
-                                <th class="align-middle text-center"><?= $value ?></th>
+                                <th class="align-middle text-center status-box">
+                                    <span><?= $value ?></span>
+                                    <?php if (isset($config['product'][$type]['check_all']) && $config['product'][$type]['check_all'] == true) { ?>
+                                        <span class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="status-checkall" data-status="<?= $key ?>" <?= $func->ischecked($items, $key); ?>>
+                                            <label for="status-checkall" class="custom-control-label"></label>
+                                        </span>
+                                    <?php } ?>
+                                </th>
                         <?php }
                         } ?>
                         <th class="align-middle text-center">Thao tác</th>
@@ -124,10 +132,10 @@ $copyImg = (isset($config['product'][$type]['copy_image']) && $config['product']
                                         </a>
                                     </td>
                                 <?php } ?>
-                                <?php if(isset($config['product'][$type]['show_images2']) && $config['product'][$type]['show_images2'] == true) { ?>
+                                <?php if (isset($config['product'][$type]['show_images2']) && $config['product'][$type]['show_images2'] == true) { ?>
                                     <td class="align-middle">
-                                        <a href="<?=$linkEdit?><?=$linkID?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['namevi']?>">
-                                            <?=$func->getImage(['class' => 'rounded img-preview', 'sizes' => $config['product'][$type]['thumb2'], 'upload' => UPLOAD_PRODUCT_L, 'image' => $items[$i]['photo2'], 'alt' => $items[$i]['namevi']])?>
+                                        <a href="<?= $linkEdit ?><?= $linkID ?>&id=<?= $items[$i]['id'] ?>" title="<?= $items[$i]['namevi'] ?>">
+                                            <?= $func->getImage(['class' => 'rounded img-preview', 'sizes' => $config['product'][$type]['thumb2'], 'upload' => UPLOAD_PRODUCT_L, 'image' => $items[$i]['photo2'], 'alt' => $items[$i]['namevi']]) ?>
                                         </a>
                                     </td>
                                 <?php } ?>

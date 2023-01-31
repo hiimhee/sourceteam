@@ -24,10 +24,10 @@ $copyImg = (isset($config['news'][$type]['copy_image']) && $config['news'][$type
 <!-- Main content -->
 <section class="content">
     <div class="card-footer text-sm sticky-top">
-        <?php if($config['news'][$type]['notadd']!='khongthemxoa') { ?>
-        <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-        <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?><?= $strUrl ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-<?php } ?>
+        <?php if ($config['news'][$type]['notadd'] != 'khongthemxoa') { ?>
+            <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+            <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?><?= $strUrl ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+        <?php } ?>
         <div class="form-inline form-search d-inline-block align-middle ml-3">
             <div class="input-group input-group-sm">
                 <input class="form-control form-control-navbar text-sm" type="search" id="keyword" placeholder="Tìm kiếm" aria-label="Tìm kiếm" value="<?= (isset($_GET['keyword'])) ? $_GET['keyword'] : '' ?>" onkeypress="doEnter(event,'keyword','<?= $linkMan ?>')">
@@ -73,7 +73,7 @@ $copyImg = (isset($config['news'][$type]['copy_image']) && $config['news'][$type
                         <?php if (isset($config['news'][$type]['show_images']) && $config['news'][$type]['show_images'] == true) { ?>
                             <th class="align-middle">Hình</th>
                         <?php } ?>
-                        <?php if(isset($config['news'][$type]['show_images2']) && $config['news'][$type]['show_images2'] == true) { ?>
+                        <?php if (isset($config['news'][$type]['show_images2']) && $config['news'][$type]['show_images2'] == true) { ?>
                             <th class="align-middle">Hình 2</th>
                         <?php } ?>
                         <th class="align-middle" style="width:30%">Tiêu đề</th>
@@ -82,7 +82,15 @@ $copyImg = (isset($config['news'][$type]['copy_image']) && $config['news'][$type
                         <?php } ?>
                         <?php if (isset($config['news'][$type]['check'])) {
                             foreach ($config['news'][$type]['check'] as $key => $value) { ?>
-                                <th class="align-middle text-center"><?= $value ?></th>
+                                <th class="align-middle text-center status-box">
+                                    <span><?= $value ?></span>
+                                    <?php if (isset($config['news'][$type]['check_all']) && $config['news'][$type]['check_all'] == true) { ?>
+                                        <span class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="status-checkall" data-status="<?= $key ?>" <?= $func->ischecked($items, $key); ?>>
+                                            <label for="status-checkall" class="custom-control-label"></label>
+                                        </span>
+                                    <?php } ?>
+                                </th>
                         <?php }
                         } ?>
                         <th class="align-middle text-center">Thao tác</th>
@@ -118,13 +126,13 @@ $copyImg = (isset($config['news'][$type]['copy_image']) && $config['news'][$type
                                             <?php /*
                                             <?= $func->getImage(['class' => 'rounded img-preview', 'sizes' => $config['news'][$type]['thumb'], 'upload' => UPLOAD_NEWS_L, 'image' => $items[$i]['photo'], 'alt' => $items[$i]['namevi']]) ?>
                                             */ ?>
-                                           <img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=THUMBSnews?>/<?=$config['news'][$type]['thumb']?>/<?=UPLOAD_NEWS_L.$items[$i]['photo']?>" alt="<?=$items[$i]['namevi']?>" style="<?=$config['news'][$type]['css_hinh']?>">
+                                            <img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?= THUMBSnews ?>/<?= $config['news'][$type]['thumb'] ?>/<?= UPLOAD_NEWS_L . $items[$i]['photo'] ?>" alt="<?= $items[$i]['namevi'] ?>" style="<?= $config['news'][$type]['css_hinh'] ?>">
                                         </a>
                                     </td>
                                 <?php } ?>
-                                <?php if(isset($config['news'][$type]['show_images2']) && $config['news'][$type]['show_images2'] == true) { ?>
+                                <?php if (isset($config['news'][$type]['show_images2']) && $config['news'][$type]['show_images2'] == true) { ?>
                                     <td class="align-middle">
-                                        <a href="<?=$linkEdit?><?=$linkID?>&id=<?=$items[$i]['id']?>" title="<?=$items[$i]['namevi']?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?=THUMBSnews?>/<?=$config['news'][$type]['thumb2']?>/<?=UPLOAD_NEWS_L.$items[$i]['photo2']?>" alt="<?=$items[$i]['namevi']?>" style="<?=$config['news'][$type]['css_hinh2']?>"></a>
+                                        <a href="<?= $linkEdit ?><?= $linkID ?>&id=<?= $items[$i]['id'] ?>" title="<?= $items[$i]['namevi'] ?>"><img class="rounded img-preview" onerror="src='assets/images/noimage.png'" src="<?= THUMBSnews ?>/<?= $config['news'][$type]['thumb2'] ?>/<?= UPLOAD_NEWS_L . $items[$i]['photo2'] ?>" alt="<?= $items[$i]['namevi'] ?>" style="<?= $config['news'][$type]['css_hinh2'] ?>"></a>
                                     </td>
                                 <?php } ?>
                                 <td class="align-middle">
@@ -187,9 +195,9 @@ $copyImg = (isset($config['news'][$type]['copy_image']) && $config['news'][$type
                                         </div>
                                     <?php } ?>
                                     <a class="text-primary mr-2" href="<?= $linkEdit ?><?= $linkID ?>&id=<?= $items[$i]['id'] ?>" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <?php if($config['news'][$type]['notadd']!='khongthemxoa') { ?>
-                                    <a class="text-danger" id="delete-item" data-url="<?= $linkDelete ?><?= $linkID ?>&id=<?= $items[$i]['id'] ?>" title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                <?php } ?>
+                                    <?php if ($config['news'][$type]['notadd'] != 'khongthemxoa') { ?>
+                                        <a class="text-danger" id="delete-item" data-url="<?= $linkDelete ?><?= $linkID ?>&id=<?= $items[$i]['id'] ?>" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <?php } ?>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -203,10 +211,10 @@ $copyImg = (isset($config['news'][$type]['copy_image']) && $config['news'][$type
             <?= $paging ?>
         </div>
     <?php } ?>
-    <?php if($config['news'][$type]['notadd']!='khongthemxoa') { ?>
-    <div class="card-footer text-sm">
-        <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-        <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?><?= $strUrl ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-    </div>
-<?php } ?>
+    <?php if ($config['news'][$type]['notadd'] != 'khongthemxoa') { ?>
+        <div class="card-footer text-sm">
+            <a class="btn btn-sm bg-gradient-primary text-white" href="<?= $linkAdd ?>" title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+            <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="<?= $linkDelete ?><?= $strUrl ?>" title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+        </div>
+    <?php } ?>
 </section>

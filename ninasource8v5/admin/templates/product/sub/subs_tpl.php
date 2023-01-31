@@ -58,7 +58,15 @@ $linkDelete = "index.php?com=product&act=delete_sub&type=" . $type;
                         <th class="align-middle" style="width:30%">Tiêu đề</th>
                         <?php if (isset($config['product'][$type]['check_sub'])) {
                             foreach ($config['product'][$type]['check_sub'] as $key => $value) { ?>
-                                <th class="align-middle text-center"><?= $value ?></th>
+                                <th class="align-middle text-center status-box">
+                                    <span><?= $value ?></span>
+                                    <?php if (isset($config['product'][$type]['check_all_sub']) && $config['product'][$type]['check_all_sub'] == true) { ?>
+                                        <span class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="status-checkall" data-status="<?= $key ?>" <?= $func->ischecked($items, $key); ?>>
+                                            <label for="status-checkall" class="custom-control-label"></label>
+                                        </span>
+                                    <?php } ?>
+                                </th>
                         <?php }
                         } ?>
                         <th class="align-middle text-center">Thao tác</th>

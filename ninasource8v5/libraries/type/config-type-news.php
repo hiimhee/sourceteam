@@ -12,6 +12,7 @@ $config['news'][$nametype]['comment'] = true;
 $config['news'][$nametype]['chucvu'] = false;
 $config['news'][$nametype]['slug'] = true;
 $config['news'][$nametype]['check'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all'] = true;
 $config['news'][$nametype]['images'] = true;
 $config['news'][$nametype]['show_images'] = true;
 $config['news'][$nametype]['desc'] = true;
@@ -36,6 +37,7 @@ $config['news'][$nametype]['css_hinh'] = '';//background:#000;padding:3px;
 $nametype = "tuyen-dung";
 $config['news'][$nametype]['title_main'] = "Tuyển dụng";
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all'] = false;
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['slug'] = true;
 $config['news'][$nametype]['copy'] = true;
@@ -55,6 +57,7 @@ $config['news'][$nametype]['notadd'] = '';//khongthemxoa
 $nametype = "chinh-sach";
 $config['news'][$nametype]['title_main'] = "Chính sách";
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all'] = false;
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['slug'] = true;
 $config['news'][$nametype]['copy'] = true;
@@ -74,6 +77,7 @@ $config['news'][$nametype]['notadd'] = '';//khongthemxoa
 $config['news'][$nametype]['title_main'] = "Chi nhánh";
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");  
+$config['news'][$nametype]['check_all'] = false;
 $config['news'][$nametype]['bando'] = true;  */ 
 
 /* Tiêu chí */
@@ -82,6 +86,7 @@ $config['news'][$nametype]['title_main'] = "Tiêu chí";
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['copy_image'] = false;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all'] = false;
 $config['news'][$nametype]['images'] = true;
 $config['news'][$nametype]['show_images'] = true;   
 $config['news'][$nametype]['desc'] = true;
@@ -101,6 +106,7 @@ $config['news'][$nametype]['facebook'] = true;
 $config['news'][$nametype]['zalo'] = true;
 $config['news'][$nametype]['skype'] = true;
 $config['news'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all'] = false;
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['tailieu'] = false;
 $config['news'][$nametype]['images'] = false;
@@ -205,6 +211,7 @@ $config['news'][$nametype]['images_list'] = true;
 $config['news'][$nametype]['show_images_list'] = true;
 $config['news'][$nametype]['slug_list'] = true;
 $config['news'][$nametype]['check_list'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all_list'] = true;
 $config['news'][$nametype]['gallery_list'] = array(
     $nametype => array(
         "title_main_photo" => "Hình ảnh Tin tức cấp 1",
@@ -244,6 +251,7 @@ $config['news'][$nametype]['images_cat'] = true;
 $config['news'][$nametype]['show_images_cat'] = true;
 $config['news'][$nametype]['slug_cat'] = true;
 $config['news'][$nametype]['check_cat'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all_cat'] = true;
 $config['news'][$nametype]['desc_cat'] = true;
 $config['news'][$nametype]['desc_cke_cat'] = true;
 $config['news'][$nametype]['content_cat'] = true;
@@ -260,6 +268,7 @@ $config['news'][$nametype]['images_item'] = true;
 $config['news'][$nametype]['show_images_item'] = true;
 $config['news'][$nametype]['slug_item'] = true;
 $config['news'][$nametype]['check_item'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all_item'] = true;
 $config['news'][$nametype]['desc_item'] = true;
 $config['news'][$nametype]['desc_cke_item'] = true;
 $config['news'][$nametype]['content_item'] = true;
@@ -276,6 +285,7 @@ $config['news'][$nametype]['images_sub'] = true;
 $config['news'][$nametype]['show_images_sub'] = true;
 $config['news'][$nametype]['slug_sub'] = true;
 $config['news'][$nametype]['check_sub'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
+$config['news'][$nametype]['check_all_sub'] = true;
 $config['news'][$nametype]['desc_sub'] = true;
 $config['news'][$nametype]['desc_cke_sub'] = true;
 $config['news'][$nametype]['content_sub'] = true;
