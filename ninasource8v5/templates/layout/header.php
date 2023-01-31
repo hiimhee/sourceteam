@@ -49,7 +49,7 @@
     </div>
     <div class="header-bottom">
         <div class="wrap-content">
-            <a class="logo-header" href="">
+            <a class="logo-header shiner" href="">
                 <?= $func->getImage(['sizes' => '216x76x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $logo['photo'], 'alt' => $setting['name' . $lang]]) ?>
             </a>            
             <a class="banner-header" href="">

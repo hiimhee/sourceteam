@@ -789,8 +789,46 @@ NN_FRAMEWORK.doihinh = function(){
 		});
 	}
 };
+
+NN_FRAMEWORK.Shiner = function(){
+    if(isExist($(".shiner"))) {
+        var api = $(".shiner").peShiner({
+            api: true,
+            paused: true,
+            reverse: true,
+            repeat: 1,
+            color: 'white'
+        });
+        api.resume();
+    }
+};
+NN_FRAMEWORK.SearchText = function(){
+    if(isExist($("#keyword"))) {
+        var placeholderText = [
+            $("#keyword").attr('placeholder')
+        ];
+        $('#keyword').placeholderTypewriter({
+            text: placeholderText,
+            delay: 50,
+            pause: 1000
+        });
+    }
+    if(isExist($("#keyword2"))) {
+        var placeholderText = [
+            $("#keyword2").attr('placeholder')
+        ];
+        $('#keyword2').placeholderTypewriter({
+            text: placeholderText,
+            delay: 50,
+            pause: 1000
+        });
+    }
+};
+
 /* Ready */
 $(document).ready(function () {
+	NN_FRAMEWORK.Shiner();
+    NN_FRAMEWORK.SearchText();
 	NN_FRAMEWORK.Lazys();
 	NN_FRAMEWORK.Tools();
 	NN_FRAMEWORK.Popup();
