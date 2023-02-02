@@ -12,7 +12,13 @@ define('NN_AUTHOR', 'NINA_DEVELOPER');
 define('COPYSITE', true);
 
 /* Cấu hình giỏ hàng */
-define('CARTSITE', true);
+define('CARTSITE', false);
+
+/* Cấu hình lọc sản phẩm */
+define('FILERSITE', false);
+
+/* Cấu hình giỏ hàng nâng cao */
+define('CARTPROSITE', false);
 
 /* Cấu hình chung */
 $config = array(

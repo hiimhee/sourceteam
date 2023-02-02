@@ -2283,7 +2283,7 @@ class Functions
                 $str ='';
                 foreach($truyvan as $k => $v){ 
                     $str .='<a class="'.$cssitem.' text-decoration-none w-clear" href="'.$v[$sluglang].'" title="'.$v['name'.$lang].'">
-                        <p class="pic-news scale-img">'.$this->getImage(['class' => 'lazy w-100', 'sizes' => '160x120x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]).'</p>
+                        <p class="pic-news scale-img">'.$this->getImage(['class' => 'lazy w-100', 'sizes' => '400x300x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]).'</p>
                         <div class="info-news">
                             <h3 class="name-news">'.$v['name'.$lang].'</h3>
                             <p class="time-news">'.ngaydang.': '.date("d/m/Y h:i A",$v['date_created']).'</p>

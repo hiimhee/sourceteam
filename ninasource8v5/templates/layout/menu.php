@@ -12,7 +12,7 @@
             <li class="menu-line"></li>
             <li>
                 <a class="has-child <?php if ($com == 'tin-tuc') echo 'active'; ?> transition" href="tin-tuc" title="<?= tintuc ?>"><?= tintuc ?></a>
-                <?=$func->formenu('news','tin-tuc');?>
+                <?php // echo $func->formenu('news','tin-tuc');?>
             </li>
             <li class="menu-line"></li>
             <li><a class="<?php if ($com == 'tuyen-dung') echo 'active'; ?> transition" href="tuyen-dung" title="<?= tuyendung ?>"><?= tuyendung ?></a></li>
@@ -26,7 +26,9 @@
                 <div class="search w-clear">
                     <input type="text" id="keyword" placeholder="<?= nhaptukhoatimkiem ?>" onkeypress="doEnter(event,'keyword');" />
                     <p onclick="onSearch('keyword');"><i class="fas fa-search"></i></p>
+                    <?php /*
                     <div style="display: none;" class="keyword-autocomplete"></div>
+                    */ ?>
                 </div>
             </li>
         </ul>

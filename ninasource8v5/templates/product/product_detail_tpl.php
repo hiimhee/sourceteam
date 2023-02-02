@@ -7,9 +7,9 @@
                     data-maxwidth="100%"
                     data-allowfullscreen="true"
                     data-nav="thumbs">
-                    <img id="Zoom-1" src="<?=THUMBS?>/740x740x1/<?=UPLOAD_PRODUCT_L.$rowDetail['photo']?>">
+                    <img id="Zoom-1" src="<?=THUMBS?>/740x740x2/<?=UPLOAD_PRODUCT_L.$rowDetail['photo']?>">
                     <?php foreach ($rowDetailPhoto as $key => $value) { ?>
-                    <img src="<?=THUMBS?>/740x740x1/<?=UPLOAD_PRODUCT_L.$value['photo']?>">
+                    <img src="<?=THUMBS?>/740x740x2/<?=UPLOAD_PRODUCT_L.$value['photo']?>">
                     <?php } ?>
                 </div>
             </div>
@@ -138,6 +138,7 @@
                             <?php } ?>
                         </div>
                     <?php } ?>
+                    <?php if(CARTSITE == true) { ?>
                         <li class="w-clear">
                             <label class="attr-label-pro-detail d-block"><?=soluong?>:</label>
                             <div class="attr-content-pro-detail d-block">
@@ -148,6 +149,7 @@
                                 </div>
                             </div>
                         </li>
+                    <?php } ?>
                 <?php } ?>
 
                 <?php /* Dành cho giỏ hàng size - color không đổi giá ?>
@@ -194,6 +196,7 @@
                     <div class="attr-content-pro-detail"><?= $rowDetail['view'] ?></div>
                 </li>
             </ul>
+            <?php if(CARTSITE == true) { ?>
             <div class="cart-pro-detail">
                 <a class="btn btn-success addcart rounded-0 mr-2" data-id="<?= $rowDetail['id'] ?>" data-action="addnow">
                     <i class="fas fa-shopping-bag mr-1"></i>
@@ -204,6 +207,7 @@
                     <span>Mua ngay</span>
                 </a>
             </div>
+            <?php } ?>
         </div>
     </div>
     <?php /*

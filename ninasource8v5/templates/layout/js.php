@@ -18,7 +18,8 @@
         'back_to_home': '<?= vetrangchu ?>',
     };
     var LIST_SAVED = '';
-    var CARTSITE = '<?= (CARTSITE) ? 'true' : 'false' ?>';
+    var CARTSITE = '<?= (CARTSITE) ? true : false ?>';
+    var FILERSITE = '<?= (FILERSITE) ? true : false ?>';
 </script>
 <!-- Js Files -->
 <?php

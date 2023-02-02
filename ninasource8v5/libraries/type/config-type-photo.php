@@ -11,24 +11,24 @@
 // $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
 
 /* Banner */
-$nametype = "banner";
-$config['photo']['photo_static'][$nametype]['title_main'] = "Banner";
-$config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
-$config['photo']['photo_static'][$nametype]['images'] = true;
-$config['photo']['photo_static'][$nametype]['width'] = 216;
-$config['photo']['photo_static'][$nametype]['height'] = 76;
-$config['photo']['photo_static'][$nametype]['thumb'] = '100x100x2';
-$config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
-$config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000;padding:10px;
+// $nametype = "banner";
+// $config['photo']['photo_static'][$nametype]['title_main'] = "Banner";
+// $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+// $config['photo']['photo_static'][$nametype]['images'] = true;
+// $config['photo']['photo_static'][$nametype]['width'] = 216;
+// $config['photo']['photo_static'][$nametype]['height'] = 76;
+// $config['photo']['photo_static'][$nametype]['thumb'] = '100x100x2';
+// $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
+// $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000;padding:10px;
 
 /* Logo */
 $nametype = "logo";
 $config['photo']['photo_static'][$nametype]['title_main'] = "Logo";
 $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
 $config['photo']['photo_static'][$nametype]['images'] = true;
-$config['photo']['photo_static'][$nametype]['width'] = 216;
-$config['photo']['photo_static'][$nametype]['height'] = 76;
-$config['photo']['photo_static'][$nametype]['thumb'] = '100x100x2';
+$config['photo']['photo_static'][$nametype]['width'] = 250;
+$config['photo']['photo_static'][$nametype]['height'] = 50;
+$config['photo']['photo_static'][$nametype]['thumb'] = '250x50x2';
 $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
 $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000;padding:10px;
 
@@ -37,9 +37,9 @@ $nametype = "favicon";
 $config['photo']['photo_static'][$nametype]['title_main'] = "Favicon";
 $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
 $config['photo']['photo_static'][$nametype]['images'] = true;
-$config['photo']['photo_static'][$nametype]['width'] = 216;
-$config['photo']['photo_static'][$nametype]['height'] = 76;
-$config['photo']['photo_static'][$nametype]['thumb'] = '100x100x2';
+$config['photo']['photo_static'][$nametype]['width'] = 250;
+$config['photo']['photo_static'][$nametype]['height'] = 50;
+$config['photo']['photo_static'][$nametype]['thumb'] = '250x50x2';
 $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
 $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000;padding:10px;
 
@@ -107,8 +107,8 @@ $config['photo']['man_photo'][$nametype]['images_photo'] = true;
 $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
 $config['photo']['man_photo'][$nametype]['link_photo'] = true;
 $config['photo']['man_photo'][$nametype]['name_photo'] = true;
-$config['photo']['man_photo'][$nametype]['width_photo'] = 1920;
-$config['photo']['man_photo'][$nametype]['height_photo'] = 560;
+$config['photo']['man_photo'][$nametype]['width_photo'] = 1366;
+$config['photo']['man_photo'][$nametype]['height_photo'] = 500;
 $config['photo']['man_photo'][$nametype]['thumb_photo'] = '100x100x2';
 $config['photo']['man_photo'][$nametype]['notadd'] = '';//khongthemxoa
 $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif';

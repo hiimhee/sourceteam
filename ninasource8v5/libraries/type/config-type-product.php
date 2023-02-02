@@ -4,20 +4,20 @@ $nametype = "san-pham";
 $config['product'][$nametype]['title_main'] = "Sản Phẩm";
 $config['product'][$nametype]['dropdown'] = true;
 $config['product'][$nametype]['list'] = true;
-$config['product'][$nametype]['cat'] = false;
+$config['product'][$nametype]['cat'] = true;
 $config['product'][$nametype]['item'] = false;
 $config['product'][$nametype]['sub'] = false;
 $config['product'][$nametype]['option'] = false;
 $config['product'][$nametype]['brand'] = false;
-$config['product'][$nametype]['color'] = true;
-$config['product'][$nametype]['size'] = true;
+$config['product'][$nametype]['color'] = false;
+$config['product'][$nametype]['size'] = false;
 $config['product'][$nametype]['tags'] = false;
 $config['product'][$nametype]['import'] = false;
 $config['product'][$nametype]['export'] = false;
 $config['product'][$nametype]['view'] = true;
 $config['product'][$nametype]['copy'] = true;
 $config['product'][$nametype]['copy_image'] = true;
-$config['product'][$nametype]['comment'] = true;
+$config['product'][$nametype]['comment'] = false;
 $config['product'][$nametype]['slug'] = true;
 $config['product'][$nametype]['check'] = array("noibat" => "Nổi bật", "moi" => "Mới", "banchay" => "Bán chạy", "hienthi" => "Hiển thị");
 $config['product'][$nametype]['check_all'] = true;
@@ -74,8 +74,8 @@ $config['product'][$nametype]['img_type_color'] = '.jpg|.gif|.png|.jpeg|.gif';
 
 /* Sản phẩm (List) */
 $config['product'][$nametype]['title_main_list'] = "Sản phẩm cấp 1";
-$config['product'][$nametype]['images_list'] = true;
-$config['product'][$nametype]['show_images_list'] = true;
+$config['product'][$nametype]['images_list'] = false;
+$config['product'][$nametype]['show_images_list'] = false;
 $config['product'][$nametype]['slug_list'] = true;
 $config['product'][$nametype]['check_list'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");
 $config['product'][$nametype]['check_all_list'] = false;
@@ -88,8 +88,8 @@ $config['product'][$nametype]['img_type_list'] = '.jpg|.gif|.png|.jpeg|.gif';
 
 /* Sản phẩm (Cat) */
 $config['product'][$nametype]['title_main_cat'] = "Sản phẩm cấp 2";
-$config['product'][$nametype]['images_cat'] = true;
-$config['product'][$nametype]['show_images_cat'] = true;
+$config['product'][$nametype]['images_cat'] = false;
+$config['product'][$nametype]['show_images_cat'] = false;
 $config['product'][$nametype]['slug_cat'] = true;
 $config['product'][$nametype]['check_cat'] = array("hienthi" => "Hiển thị");//"noibat" => "Nổi bật", 
 $config['product'][$nametype]['check_all_cat'] = false;

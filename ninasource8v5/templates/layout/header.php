@@ -50,19 +50,23 @@
     <div class="header-bottom">
         <div class="wrap-content">
             <a class="logo-header shiner" href="">
-                <?= $func->getImage(['sizes' => '216x76x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $logo['photo'], 'alt' => $setting['name' . $lang]]) ?>
-            </a>            
+                <?= $func->getImage(['sizes' => '250x50x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $logo['photo'], 'alt' => $setting['name' . $lang]]) ?>
+            </a> 
+            <?php /*
             <a class="banner-header" href="">
                 <?= $func->getImage(['sizes' => '530x120x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $banner['photo'], 'alt' => $setting['name' . $lang]]) ?>
             </a>            
+            */ ?>
             <a class="hotline-header">
                 <p>Hotline hỗ trợ:</p>
                 <span><?=$func->formatPhone($optsetting['hotline']) ?></span>
             </a>
+            <?php /*
             <a class="email-header">
                 <p>Email:</p>
                 <span><?=($optsetting['email']) ?></span>
             </a>
+            */ ?>
         </div>
     </div>
 </div>

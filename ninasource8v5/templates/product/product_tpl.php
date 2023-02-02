@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 col-lg-3">
+    <div class="col-12 col-lg-3 <?php if(FILERSITE != true) echo 'd-none col-lg-12' ?>">
         <?php
             $brand_fitler = $d->rawQuery("select name$lang, id from table_product_brand where type = ? and find_in_set('hienthi', status) order by numb, id desc",array('san-pham'));
             $size_fitler = $d->rawQuery("select name$lang, id from table_size where type = ? and find_in_set('hienthi', status) order by numb, id desc",array('san-pham'));
@@ -72,7 +72,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-12 col-lg-9">
+    <div class="col-12 col-lg-9 <?php if(FILERSITE != true) echo 'col-lg-12' ?>">
         <div class="title-main"><span><?= (!empty($titleCate)) ? $titleCate : @$titleMain ?></span></div>
         <div class="content-main w-clear">
             <?php if (!empty($product)) {

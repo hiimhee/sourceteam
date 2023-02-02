@@ -4,8 +4,7 @@
     <?php if (!empty($news)) { 
         //css_baiviet_ngang: thể hiện 4 bài viết 1 hàng  
         // Đóng dấu:   WATERMARK.'/news/355x266x1/'
-        echo $func->lay_baiviet($news,'news',THUMBS.'/355x266x1/');
-         
+        echo $func->lay_baiviet($news,'news',THUMBS.'/400x300x1/');
     } else { ?>
         <div class="col-12">
             <div class="alert alert-warning w-100" role="alert">
@@ -19,8 +18,6 @@
         <div class="pagination-home w-100"><?= (!empty($paging)) ? $paging : '' ?></div>
     </div>
 </div>
-
-
 <?php /*if($com=='the-bao-hanh'){ 
     $about = $d->rawQueryOne("select noidung$lang from #_static where type = ? limit 0,1",array('nd-'.$type));
     ?>   
@@ -37,9 +34,7 @@
             </div>
         </div>
     </div>
-
     <div class="content-main w-clear" id="toc-content"><?=htmlspecialchars_decode($about['noidung'.$lang])?></div>
-
     <?php if($_GET['idthe']!=''||$_GET['ten']!=''){
         $opt = (isset($thebaohanh[0]['options2']) && $thebaohanh[0]['options2'] != '') ? json_decode($thebaohanh[0]['options2'],true) : null;
         ?>
@@ -87,9 +82,7 @@
             </tr>
         </tbody></table>
     <?php } ?>
-
 <?php }*/ ?>
-
 <?php /*  css thebaohanh?>
 .flex-ht{margin-top: 20px;}
 .flex-ht .input-ht{margin-bottom: 20px;width: 100%;}
