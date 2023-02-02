@@ -13,7 +13,7 @@
 <meta name="robots" content="<?= ($source=='search' or $source=='user' or $source=='order') ? 'nofollow, noindex' : 'index,follow' ?>" />
 
 <!-- Favicon -->
-<link href="<?= ASSET . UPLOAD_PHOTO_L . $favicon['photo'] ?>" rel="shortcut icon" type="image/x-icon" />
+<link href="<?= ASSET . THUMBS . '/32x32x2/' . UPLOAD_PHOTO_L . $favicon['photo'] ?>" rel="shortcut icon" type="image/x-icon" />
 
 <!-- Webmaster Tool -->
 <?= $func->decodeHtmlChars($setting['mastertool']) ?>
