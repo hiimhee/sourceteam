@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 02:58 AM
+-- Generation Time: Feb 02, 2023 at 03:18 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -3844,7 +3844,8 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (10338, 1675246055, '::1'),
 (10339, 1675246965, '::1'),
 (10340, 1675300563, '::1'),
-(10341, 1675302456, '::1');
+(10341, 1675302456, '::1'),
+(10342, 1675303843, '::1');
 
 -- --------------------------------------------------------
 
@@ -4679,19 +4680,10 @@ INSERT INTO `table_gallery` (`id`, `id_parent`, `photo`, `hash`, `nameen`, `name
 (27, 1, 'news-1-1102-4315.jpg', '', '', '', 0, '', '', 1, 'tin-tuc', 'news', 'man', 'tin-tuc', '', 1609287029, 0),
 (29, 1, 'news-3-4960-2676.jpg', '', '', '', 0, '', '', 3, 'tin-tuc', 'news', 'man', 'tin-tuc', '', 1609287029, 0),
 (30, 1, 'news-2-1467-9982.jpg', '', '', '', 0, '', '', 4, 'tin-tuc', 'news', 'man', 'tin-tuc', '', 1609287029, 0),
-(31, 9, 'poduct-1-1318-7485.jpg', '', '', '', 0, '', '', 1, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(32, 9, 'poduct-1-1758-2016.jpeg', '', '', '', 0, '', '', 2, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(33, 9, 'poduct-2-3013-7655.jpg', '', '', '', 0, '', '', 3, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(34, 9, 'poduct-3-5224-9280.jpg', '', '', '', 0, '', '', 4, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(35, 9, 'poduct-4-1646-2779.jpg', '', '', '', 0, '', '', 5, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(36, 9, 'poduct-5-3937-8029.jpg', '', '', '', 0, '', '', 6, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(37, 9, 'poduct-7-3820-1176.jpg', '', '', '', 0, '', '', 7, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(38, 9, 'poduct-8-2281-3904.jpg', '', '', '', 0, '', '', 8, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(39, 9, 'poduct-9-5006-2691.jpg', '', '', '', 0, '', '', 9, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287595, 0),
-(40, 10, 'poduct-1-1318-8006.jpg', '', '', '', 0, '', '', 1, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287685, 0),
-(41, 10, 'poduct-1-1758-4678.jpeg', '', '', '', 0, '', '', 2, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287685, 0),
-(42, 10, 'poduct-2-4322-5967.jpg', '', '', '', 0, '', '', 3, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287686, 0),
-(43, 10, 'poduct-5-3937-3609.jpg', '', '', '', 0, '', '', 4, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1609287686, 0),
+(82, 9, 'marvelblackpanthersanfordgreeneinterviewinternalbannersblog-thumb-2135.jpg', '', '', '', 0, '', '', 4, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1675304254, 0),
+(81, 9, 'droplist-013023-blog-header-2554.jpg', '', '', '', 0, '', '', 3, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1675304254, 0),
+(80, 9, 'blog-thumbnail-2-7675.png', '', '', '', 0, '', '', 2, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1675304254, 0),
+(79, 9, 'a-2023-nike-dunk-color-storyblog-thumbnailen-6470.png', '', '', '', 0, '', '', 1, 'thu-vien-anh', 'product', 'man', 'thu-vien-anh', 'hienthi', 1675304254, 0),
 (78, 1, 'img05-4557.png', '', '', '', 0, '', '', 3, 'san-pham', 'product', 'man', 'san-pham', 'hienthi', 1675302265, 0),
 (76, 1, 'img01-1305.png', '', '', '', 0, '', '', 1, 'san-pham', 'product', 'man', 'san-pham', 'hienthi', 1675302265, 0),
 (77, 1, 'img04-9806.png', '', '', '', 0, '', '', 2, 'san-pham', 'product', 'man', 'san-pham', 'hienthi', 1675302265, 0);
@@ -5438,10 +5430,10 @@ INSERT INTO `table_product` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `id
 (6, 2, 2, 2, 2, 6, 'img01-9158.png', NULL, '{\"p\":\"poduct-3-9767-8087.jpg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'giay-slip-on-ultraboost-25', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 25', 'Giày Slip On Ultraboost 25', 'SOUL-25', 150000, 40, 90000, 6, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249099, 1675302158, 1, '', '', ''),
 (7, 2, 2, 2, 2, 7, 'img03-3565.png', NULL, '{\"p\":\"jpc1kzktrzrtpxgphryk-7564.png\",\"w\":650,\"h\":490,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-26', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 26', 'Giày Slip On Ultraboost 26', 'SOUL-26', 300000, 67, 100000, 7, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249216, 1675302164, 1, '', '', ''),
 (8, 2, 2, 2, 2, 1, 'img04-5349.png', NULL, '{\"p\":\"poduct-9-3401-4091.jpg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'giay-slip-on-ultraboost-27', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 27', 'Giày Slip On Ultraboost 27', 'SOUL-27', 400000, 38, 250000, 8, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249283, 1675302170, 1, '', '', ''),
-(9, 0, 0, 0, 0, 0, 'poduct-1-1318-7117.jpg', NULL, '{\"p\":\"poduct-1-1318-7117.jpg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'hinh-anh-giay-nike-air-max', 'nike-air-max-shoe-image', '', '', '', '', 'Nike Air Max shoe image', 'Hình ảnh giày Nike Air Max', '', 0, 0, 0, 1, 'hienthi', 'thu-vien-anh', 1609287629, 1620819821, 20, '', '', ''),
-(10, 0, 0, 0, 0, 0, 'poduct-1-1758-8192.jpeg', NULL, '{\"p\":\"poduct-1-1758-8192.jpeg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'hinh-anh-giay-nike-zoom', 'nike-zoom-shoe-image', '', '', '', '', 'Nike Zoom shoe image', 'Hình ảnh giày Nike Zoom', '', 0, 0, 0, 2, 'hienthi', 'thu-vien-anh', 1609287653, 1609287690, 3, '', '', ''),
-(11, 0, 0, 0, 0, 0, 'poduct-2-3013-5583.jpg', NULL, '', 'hinh-anh-giay-nike-air-force', 'nike-air-force-shoe-image', '', '', '', '', 'Nike Air Force shoe image', 'Hình ảnh giày Nike Air Force', '', 0, 0, 0, 3, 'hienthi', 'thu-vien-anh', 1609287703, 1609287726, 0, '', '', ''),
-(13, 0, 0, 0, 0, 0, 'poduct-8-2281-2890.jpg', NULL, '', 'hinh-anh-giay-nike-phantom', 'nike-phantom-shoe-image', '', '', '', '', 'Nike Phantom shoe image', 'Hình ảnh giày Nike Phantom', '', 0, 0, 0, 4, 'hienthi', 'thu-vien-anh', 1609287738, 1609287762, 0, '', '', ''),
+(9, 0, 0, 0, 0, 0, 'blog-thumbnail-2-9986.png', NULL, '{\"p\":\"blog-thumbnail-2-9986.png\",\"w\":700,\"h\":500,\"m\":\"image\\/png\"}', 'hinh-anh-giay-nike-air-max', '', '', '', '', '', 'Nike Air Max shoe image', 'Hình ảnh giày Nike Air Max', '', 0, 0, 0, 1, 'hienthi', 'thu-vien-anh', 1609287629, 1675304256, 21, '', '', ''),
+(10, 0, 0, 0, 0, 0, 'a-2023-nike-dunk-color-storyblog-thumbnailen-7768.png', NULL, '{\"p\":\"poduct-1-1758-8192.jpeg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'hinh-anh-giay-nike-zoom', '', '', '', '', '', 'Nike Zoom shoe image', 'Hình ảnh giày Nike Zoom', '', 0, 0, 0, 2, 'hienthi', 'thu-vien-anh', 1609287653, 1675304264, 3, '', '', ''),
+(11, 0, 0, 0, 0, 0, 'marvelblackpanthersanfordgreeneinterviewinternalbannersblog-thumb-8113.jpg', NULL, '', 'hinh-anh-giay-nike-air-force', '', '', '', '', '', 'Nike Air Force shoe image', 'Hình ảnh giày Nike Air Force', '', 0, 0, 0, 3, 'hienthi', 'thu-vien-anh', 1609287703, 1675304268, 0, '', '', ''),
+(13, 0, 0, 0, 0, 0, 'droplist-013023-blog-header-6828.jpg', NULL, '', 'hinh-anh-giay-nike-phantom', '', '', '', '', '', 'Nike Phantom shoe image', 'Hình ảnh giày Nike Phantom', '', 0, 0, 0, 4, 'hienthi', 'thu-vien-anh', 1609287738, 1675304272, 0, '', '', ''),
 (39, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', 'Thái Lan', '', 0, 0, 0, 1, 'hienthi', 'xuat-xu', 1675246397, 0, 0, '', '', ''),
 (40, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', 'Việt Nam', '', 0, 0, 0, 2, 'hienthi', 'xuat-xu', 1675246403, 0, 0, '', '', ''),
 (41, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', 'Singapore', '', 0, 0, 0, 3, 'hienthi', 'xuat-xu', 1675246409, 0, 0, '', '', '');
@@ -5844,7 +5836,6 @@ CREATE TABLE `table_seo` (
 --
 
 INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `keywordsvi`, `descriptionvi`, `titleen`, `keywordsen`, `descriptionen`, `schemavi`, `schemaen`) VALUES
-(280, 0, 'setting', 'update', 'setting', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', '', '', '', '', ''),
 (110, 1, 'product', 'man_list', 'san-pham', 'Giày nam', 'Giày nam', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'Men\'s shoes', 'Men\'s shoes', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
 (6, 2, 'product', 'man_list', 'san-pham', 'Giày nữ', 'Giày nữ', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'Women\'s shoes', 'Women\'s shoes', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
 (111, 1, 'product', 'man_cat', 'san-pham', 'Giày tây đế cao', 'Giày tây đế cao', 'Thiết kế ban đầu dành cho sân bóng rổ vào thập niên 70. Được các ngôi sao hip hop tôn sùng vào thập niên 80. Đôi giày adidas Superstar giờ đây đã trở thành biểu', 'High heels', 'High heels', 'Originally designed for basketball in the \'70s. Adored by hip hop stars in the\' 80s. The adidas Superstar shoes are now an iconic street fashionista.', NULL, NULL),
@@ -5874,10 +5865,11 @@ INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `ke
 (273, 2, 'news', 'man', 'tin-tuc', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 'Nike Zoom công nghệ đệm giày thành công nhất của Nike', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (274, 3, 'news', 'man', 'tin-tuc', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 'Gã khổng lồ Nike đóng cửa hàng loạt ở Trung Quốc vì corona', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
 (275, 4, 'news', 'man', 'tin-tuc', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 'Cận cảnh Nike Airmax 97 với dây giày thông minh cực độc', 'Nike Phantom GT là đôi giày đá bóng được tạo ra từ sự phân tích một lượng lớn dữ liệu từ các cầu thủ và công nghệ băng dán độc đáo.', '', '', '', '', ''),
-(134, 9, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Air Max', 'Hình ảnh giày Nike Air Max', '', 'Nike Air Max shoe image', 'Nike Air Max shoe image', '', NULL, NULL),
-(57, 10, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Zoom', 'Hình ảnh giày Nike Zoom', 'Hình ảnh giày Nike Zoom', 'Nike Zoom shoe image', 'Nike Zoom shoe image', 'Nike Zoom shoe image', NULL, NULL),
-(58, 11, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Air Force', 'Hình ảnh giày Nike Air Force', 'Hình ảnh giày Nike Air Force', 'Nike Air Force shoe image', 'Nike Air Force shoe image', 'Nike Air Force shoe image', NULL, NULL),
-(59, 13, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Phantom', 'Hình ảnh giày Nike Phantom', 'Hình ảnh giày Nike Phantom', 'Nike Phantom shoe image', 'Nike Phantom shoe image', 'Nike Phantom shoe image', NULL, NULL),
+(282, 0, 'setting', 'update', 'setting', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', '', '', '', '', ''),
+(287, 9, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Air Max', 'Hình ảnh giày Nike Air Max', '', '', '', '', '', ''),
+(288, 10, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Zoom', 'Hình ảnh giày Nike Zoom', 'Hình ảnh giày Nike Zoom', '', '', '', '', ''),
+(289, 11, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Air Force', 'Hình ảnh giày Nike Air Force', 'Hình ảnh giày Nike Air Force', '', '', '', '', ''),
+(290, 13, 'product', 'man', 'thu-vien-anh', 'Hình ảnh giày Nike Phantom', 'Hình ảnh giày Nike Phantom', 'Hình ảnh giày Nike Phantom', '', '', '', '', ''),
 (276, 5, 'news', 'man', 'chinh-sach', 'Chính sách trả hàng', 'Chính sách trả hàng', '', '', '', '', '', ''),
 (277, 6, 'news', 'man', 'chinh-sach', 'Chính sách bảo hành', 'Chính sách bảo hành', 'Chính sách bảo hành', '', '', '', '', ''),
 (278, 7, 'news', 'man', 'chinh-sach', 'Chính sách mua hàng', 'Chính sách mua hàng', 'Chính sách mua hàng', '', '', '', '', ''),
@@ -5937,7 +5929,7 @@ CREATE TABLE `table_setting` (
 --
 
 INSERT INTO `table_setting` (`id`, `options`, `mastertool`, `headjs`, `bodyjs`, `namevi`, `nameen`, `analytics`) VALUES
-(1, '{\"mailertype\":\"1\",\"ip_host\":\"120.72.119.29\",\"port_host\":\"25\",\"secure_host\":\"tls\",\"email_host\":\"no-replay@lucphat.com\",\"password_host\":\"KUV2GqzF\",\"host_gmail\":\"smtp.gmail.com\",\"port_gmail\":\"587\",\"secure_gmail\":\"tls\",\"email_gmail\":\"autosendnoreply01@gmail.com\",\"password_gmail\":\"ntfocjyshxgoxqbg\",\"lang_default\":\"vi\",\"address\":\"T\\u1ea7ng 3 s\\u1ed1 102 Nguy\\u1ec5n Ho\\u00e0ng, M\\u1ef9 \\u0110\\u00ecnh 2, Nam T\\u1eeb Li\\u00eam, H\\u00e0 N\\u1ed9i\",\"email\":\"phuctai.nina@gmail.com\",\"hotline\":\"0966342792\",\"phone\":\"0966342792\",\"zalo\":\"0966342792\",\"oaidzalo\":\"\",\"website\":\"https:\\/\\/www.google.com\\/\",\"fanpage\":\"https:\\/\\/www.facebook.com\\/LienquanMobile\\/\",\"toado\":\"\",\"toado_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"coords\":\"9.982851, 105.933084\",\"coords_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"colorSite\":\"393939\"}', '', '', '', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', 'Sneaker Shoes EN', '');
+(1, '{\"mailertype\":\"1\",\"ip_host\":\"120.72.119.29\",\"port_host\":\"25\",\"secure_host\":\"tls\",\"email_host\":\"no-replay@lucphat.com\",\"password_host\":\"KUV2GqzF\",\"host_gmail\":\"smtp.gmail.com\",\"port_gmail\":\"587\",\"secure_gmail\":\"tls\",\"email_gmail\":\"autosendnoreply01@gmail.com\",\"password_gmail\":\"ntfocjyshxgoxqbg\",\"lang_default\":\"vi\",\"address\":\"T\\u1ea7ng 3 s\\u1ed1 102 Nguy\\u1ec5n Ho\\u00e0ng, M\\u1ef9 \\u0110\\u00ecnh 2, Nam T\\u1eeb Li\\u00eam, H\\u00e0 N\\u1ed9i\",\"email\":\"phuctai.nina@gmail.com\",\"hotline\":\"0966 342 792\",\"phone\":\"0966 342 792\",\"zalo\":\"0966 342 792\",\"oaidzalo\":\"\",\"website\":\"https:\\/\\/www.google.com\\/\",\"fanpage\":\"https:\\/\\/www.facebook.com\\/LienquanMobile\\/\",\"toado\":\"\",\"toado_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"coords\":\"9.982851, 105.933084\",\"coords_iframe\":\"<iframe src=\\\"https:\\/\\/www.google.com\\/maps\\/embed?pb=!1m18!1m12!1m3!1d3919.4481760094527!2d106.68480041483649!3d10.776945462130913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b27d8a7fd%3A0xdb0d92470911a699!2sThe%20Box%20Market!5e0!3m2!1svi!2s!4v1589339784678!5m2!1svi!2s\\\" width=\\\"600\\\" height=\\\"450\\\" frameborder=\\\"0\\\" style=\\\"border:0;\\\" allowfullscreen=\\\"\\\" aria-hidden=\\\"false\\\" tabindex=\\\"0\\\"><\\/iframe>\",\"colorSite\":\"393939\"}', '', '', '', 'StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches', 'Sneaker Shoes EN', '');
 
 -- --------------------------------------------------------
 
@@ -6060,7 +6052,7 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confirm_code`, `avatar`, `fullname`, `phone`, `email`, `address`, `gender`, `login_session`, `user_token`, `lastlogin`, `status`, `role`, `secret_key`, `birthday`, `numb`) VALUES
-(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '2670ae26471283872812ba73715a5954', '1675303006', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
+(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '549dd295e92b4d8dd303ae02d610a2c7', '1675304311', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
 
 -- --------------------------------------------------------
 
@@ -6248,7 +6240,7 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('6cuc3btbdgoi065cad7sqhsdk0', 1675303076, '::1');
+('6cuc3btbdgoi065cad7sqhsdk0', 1675304294, '::1');
 
 -- --------------------------------------------------------
 
@@ -17283,7 +17275,7 @@ ALTER TABLE `table_contact`
 -- AUTO_INCREMENT for table `table_counter`
 --
 ALTER TABLE `table_counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10342;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10343;
 
 --
 -- AUTO_INCREMENT for table `table_coupon`
@@ -17307,7 +17299,7 @@ ALTER TABLE `table_excel`
 -- AUTO_INCREMENT for table `table_gallery`
 --
 ALTER TABLE `table_gallery`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `table_lang`
@@ -17469,7 +17461,7 @@ ALTER TABLE `table_pushonesignal`
 -- AUTO_INCREMENT for table `table_seo`
 --
 ALTER TABLE `table_seo`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=281;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
 
 --
 -- AUTO_INCREMENT for table `table_seopage`
