@@ -32,6 +32,7 @@ img{max-width:100%;height:auto;vertical-align:top}
 a,input,textarea{outline:none;padding:0px}
 a{text-decoration:none!important}
 input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+a.logo-header.shiner img{max-height:30px;}
 .w-clear:after{display:block;content:"";clear:both}
 .hidden{display:none}
 .clear{clear:both}
@@ -263,7 +264,7 @@ img:not([src]){visibility:hidden}
 .header .header-top .wrap-content .info-header i{vertical-align:top;margin:3px 5px 0px 0px;font-size:16px}
 .header .header-bottom .wrap-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .social-header li{width:30px}
-.header-bottom .wrap-content{padding:10px 0px}
+.header-bottom .wrap-content{padding:10px 0px;min-height:80px;}
 .hotline-header{display:inline-block;background:url(../images/hotline.png) no-repeat left center;padding-left:25px}
 .hotline-header p{font-weight:bold;margin-bottom:-2px;text-transform:capitalize;color:#333}
 .hotline-header span{font-weight:bold;color:var(--maincolor);font-size:20px;display:block}
@@ -690,8 +691,8 @@ div#main_footer ul li i{width:30px;height:30px;border:1px solid #f9f9f9;text-ali
 .list_monnb{display:block;text-align:center;margin-bottom:20px}
 .list_monnb a{font-size:16px;text-transform:uppercase;color:inherit;display:inline-block;vertical-align:top;margin:0 9px;padding:16px 20px;line-height:0;cursor:pointer;transition:0.2s;margin-bottom:5px;border:1px solid #1a1918}
 .list_monnb a:hover,.list_monnb a.active{color:#fff;background:#1a1918}
-.title-intro{margin-bottom: 0px;}
-.title-intro span{display:inline-block;text-transform:uppercase;position:relative;padding-bottom:10px;font-size:20px;color: var(--maincolor);}
+.title-intro{margin-bottom:0px;}
+.title-intro span{display:inline-block;text-transform:uppercase;position:relative;padding-bottom:10px;font-size:20px;color:var(--maincolor);}
 .title-intro span:after{content:"";position:absolute;width:100%;height:4px;bottom:0px;left:0px}
 div.box-tintuc-video{padding:50px 0}
 .newshome-best{width:43%;display:block;float:left;margin-right:1.5%}

@@ -3,7 +3,7 @@
         <div class="wrap-content">
             <p class="info-header"><?= $slogan['name' . $lang] ?></p>
             <p class="info-header"><i class="fas fa-envelope"></i>Email: <?= $optsetting['email'] ?></p>
-            <p class="info-header"><i class="fas fa-phone-square-alt"></i>Hotline: <?= $func->formatPhone($optsetting['hotline']) ?></p>
+            <p class="info-header"><i class="fas fa-phone-square-alt"></i>Hotline: <?= ($optsetting['hotline']) ?></p>
             <?php /*
             <ul class="social social-header list-unstyled p-0 m-0">
                 <?php foreach ($social as $k => $v) { ?>
@@ -59,7 +59,7 @@
             */ ?>
             <a class="hotline-header">
                 <p>Hotline hỗ trợ:</p>
-                <span><?=$func->formatPhone($optsetting['hotline']) ?></span>
+                <span><?=($optsetting['hotline']) ?></span>
             </a>
             <?php /*
             <a class="email-header">

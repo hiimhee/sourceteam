@@ -827,7 +827,7 @@ NN_FRAMEWORK.SearchText = function(){
 
 /* Ready */
 $(document).ready(function () {
-	NN_FRAMEWORK.Shiner();
+	// NN_FRAMEWORK.Shiner();
     NN_FRAMEWORK.SearchText();
 	NN_FRAMEWORK.Lazys();
 	NN_FRAMEWORK.Tools();

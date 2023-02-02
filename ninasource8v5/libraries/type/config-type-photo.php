@@ -85,17 +85,17 @@ $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000;p
 // $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000
 
 /* Popup */
-/*$nametype = "popup";
-$config['photo']['photo_static'][$nametype]['title_main'] = "Popup";
-$config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
-$config['photo']['photo_static'][$nametype]['images'] = true;
-$config['photo']['photo_static'][$nametype]['name'] = true;
-$config['photo']['photo_static'][$nametype]['link'] = true;
-$config['photo']['photo_static'][$nametype]['width'] = 800;
-$config['photo']['photo_static'][$nametype]['height'] = 600;
-$config['photo']['photo_static'][$nametype]['thumb'] = '100x100x2';
-$config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
-$config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000*/
+// $nametype = "popup";
+// $config['photo']['photo_static'][$nametype]['title_main'] = "Popup";
+// $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+// $config['photo']['photo_static'][$nametype]['images'] = true;
+// $config['photo']['photo_static'][$nametype]['name'] = true;
+// $config['photo']['photo_static'][$nametype]['link'] = true;
+// $config['photo']['photo_static'][$nametype]['width'] = 833;
+// $config['photo']['photo_static'][$nametype]['height'] = 438;
+// $config['photo']['photo_static'][$nametype]['thumb'] = '100x100x2';
+// $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
+// $config['photo']['photo_static'][$nametype]['css_hinh'] = '';//background:#000
 
 /* Slideshow */
 $nametype = "slide";
