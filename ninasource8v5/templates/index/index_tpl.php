@@ -1,10 +1,8 @@
-
 <!-- Sản phẩm nổi bật -->
 <div class="wrap-product wrap-content">
     <div class="title-main"><span>Sản phẩm nổi bật</span></div>
     <div class="page_noibat"></div>
 </div>
-
 <!-- Sản phẩm theo danh mục -->
 <?php foreach ($splistmenu as $k => $v) { ?>
 <div class="wrap-product wrap-content">
@@ -12,7 +10,6 @@
     <div class="page_danhmuc page_danhmuc<?=$v['id']?>"></div>
 </div>
 <?php } ?>
-
 <!-- Sản phẩm theo danh mục -->
 <div class="wrap-product wrap-content">
     <div class="list_monnb list_sanpham mb-3 text-center text-2xl">
@@ -23,7 +20,6 @@
     </div>
     <div class="page_sanpham"></div>
 </div>
-
 <!-- Sản phẩm theo tab cố định -->
 <div class="wrap-product wrap-content">
     <div class="list_monnb list_tab mb-3 text-center text-2xl">
@@ -33,7 +29,6 @@
     </div>
     <div class="page_tabloai"></div>
 </div>
-
 <!-- Sản phẩm theo danh mục cấp 1 & 2 -->
 <?php foreach ($splistmenu as $key => $value) {
     $spcatmenu = $d->rawQuery("select name$lang, slugvi, id from #_product_cat where type = ? and find_in_set('hienthi',status) and id_list = ? order by numb,id desc",array('san-pham', $value['id']));
@@ -56,13 +51,11 @@
     <div class="clear"></div>
 </div>
 <?php } ?>
-
 <!-- Sản phẩm nổi bật xem thêm -->
 <div class="wrap-product wrap-content">
     <div class="title-main"><span>Sản phẩm nổi bật xem thêm</span></div>
     <div class="page_noibat_more"></div>
 </div>
-
 <!-- Sản phẩm theo danh mục xem thêm -->
 <?php foreach ($splistmenu as $k => $v) { ?>
 <div class="wrap-product wrap-content">
@@ -70,7 +63,6 @@
     <div class="page_danhmuc_more<?=$v['id']?>"></div>
 </div>
 <?php } ?>
-
 <!-- Sản phẩm theo tab danh mục xem thêm -->
 <div class="wrap-product wrap-content">
     <div class="list_monnb list_sanpham_more mb-3 text-center text-2xl">
@@ -81,7 +73,6 @@
     </div>
     <div class="page_sanpham_more"></div>
 </div>
-
 <!-- Sản phẩm theo tab cố định xem thêm -->
 <div class="wrap-product wrap-content">
     <div class="list_monnb list_tab_more mb-3 text-center text-2xl">
@@ -91,10 +82,6 @@
     </div>
     <div class="page_tabloai_more"></div>
 </div>
-
-
-
-
 <?php /*
 <?php if (count($brand)) { ?>
     <div class="wrap-brand">
@@ -113,7 +100,6 @@
     </div>
 <?php } ?>
 */ ?>
-
 <?php /*
 <?php if (count($splistnb)) {
     foreach ($splistnb as $vlist) { ?>
@@ -124,7 +110,6 @@
 <?php }
 } ?>
 */ ?>
-
 <?php if(count($newsnb) || count($videonb)) { ?>
 <div class="box-tintuc-video">
     <div class="wap_1200">
@@ -138,7 +123,7 @@
                         <p class="time-newshome">Ngày đăng: <?=date("d/m/Y",$newsnb[0]['date_created'])?></p>
                         <p class="desc-newshome text-split"><?=$newsnb[0]['desc'.$lang]?></p>
                         <span class="view-newshome transition"><?=xemthem?></span>
-                        <?php //$optchinhanh = (isset($newsnb[0]['options']) && $newsnb[0]['options'] != '') ? json_decode($newsnb[0]['options'],true) : null;
+                        <?php // $optchinhanh = (isset($newsnb[0]['options']) && $newsnb[0]['options'] != '') ? json_decode($newsnb[0]['options'],true) : null;
                         //echo $optchinhanh["chucvu"]; ?>
                     </a>
                     <div class="newshome-scroll">
@@ -148,7 +133,9 @@
                                     <p class="pic-newshome-normal scale-img"><img onerror="this.src='<?=THUMBS?>/150x120x2/assets/images/noimage.png';" src="<?=THUMBS?>/150x120x1/<?=UPLOAD_NEWS_L.$v['photo']?>" alt="<?=$v['name'.$lang]?>" width="150" height="120"></p>
                                     <div class="info-newshome-normal">
                                         <h3 class="name-newshome text-split"><?=$v['name'.$lang]?></h3>
+                                        <?php /*
                                         <p class="time-newshome"><?=ngaydang?>: <?=date("d/m/Y",$v['date_created'])?></p>
+                                        */ ?>
                                         <p class="desc-newshome text-split"><?=$v['desc'.$lang]?></p>
                                     </div>
                                 </a>                                
@@ -170,7 +157,6 @@
     </div>
 </div>
 <?php } ?>
-
 <?php /*
 <?php if (count($partner)) { ?>
     <div class="wrap-partner">
@@ -189,13 +175,10 @@
     </div>
 <?php } ?>
 */ ?>
-
-
 <?php /*
 <div class="box-tintuc-video">
     <div class="wrap-content py-5">
         <div class="title-main"><span>Video clip - tin tức</span></div>
-        
         <div class="wap-tin-video">
             <div class="left-intro">
                 <?php if (!empty($newsnb)) { ?>
@@ -205,7 +188,6 @@
                         <div class="news-scroll position-relative">
                             <div class="chay-tintuc-vertical">
                                 <?php foreach ($newsnb as $v) { ?>  
-
                                         <div class="news-shadow">
                                             <div class="news-item">
                                                 <div class="news-shadow-time position-relative text-capitalize text-center">
@@ -237,7 +219,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 */ ?>

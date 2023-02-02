@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @keyframes spin{
   to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
 }
@@ -27,7 +26,7 @@
   20%,40%{-webkit-transform:rotate(25deg) scale(1) skew(1deg)}
 }
 input,button,select{appearance:none;box-shadow:none!important}
-body{font-family:'Arimo',sans-serif;font-size:14px}
+body{font-family:'Arial',sans-serif;font-size:14px}
 img{max-width:100%;height:auto;vertical-align:top}
 a,input,textarea{outline:none;padding:0px}
 a{text-decoration:none!important}
@@ -265,7 +264,7 @@ img:not([src]){visibility:hidden}
 .header .header-bottom .wrap-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .social-header li{width:30px}
 .header-bottom .wrap-content{padding:10px 0px;min-height:80px;}
-.hotline-header{display:inline-block;background:url(../images/hotline.png) no-repeat left center;padding-left:25px}
+.hotline-header{display:inline-block;}
 .hotline-header p{font-weight:bold;margin-bottom:-2px;text-transform:capitalize;color:#333}
 .hotline-header span{font-weight:bold;color:var(--maincolor);font-size:20px;display:block}
 .email-header{display:inline-block;background:url(../images/email.png) no-repeat left center;padding-left:25px;display:none}
@@ -298,7 +297,7 @@ img:not([src]){visibility:hidden}
 .menu ul li ul li:hover > a{color:var(--maincolor)}
 .menu ul li ul li:hover > a.has-child:after{border-color:var(--maincolor)}
 .menu ul li ul li ul{top:-0.75rem;left:100%;margin-top:0px}
-.search{width:230px;background:#ffffff;position:relative}
+.search{width:230px;background:#ffffff;position:relative;border-radius:35px;overflow:hidden;}
 .search p{float:left;width:35px;height:35px;line-height:35px;cursor:pointer;text-align:center;margin:0px;color:#6c757d;font-size:16px}
 .search input{width:calc(100% - 35px);height:35px;float:left;outline:none;padding:0px;border:0px;background:transparent;text-indent:10px;font-size:12px}
 .search input::-webkit-input-placeholder{color:#313131}
@@ -644,7 +643,7 @@ div.wap_footer{display:flex;flex-wrap:wrap;justify-content:space-between}
 .pic-news{float:left;margin-right:4%;width:36%;margin-bottom:0}
 .pic-news img{width:100%}
 .info-news{float:left;width:60%}
-.name-news{color:#333;font-size:16px;display:block;line-height:normal;margin-bottom:5px}
+.name-news{color:#333;font-size:14px;line-height:normal;margin-bottom:5px;font-weight:bold;}
 .name-news:hover{color:#f00}
 .time-news{color:#666;margin-bottom:0.25rem}
 .desc-news{color:#333333;margin-top:5px;line-height:22px}
@@ -660,8 +659,8 @@ div.wap_footer{display:flex;flex-wrap:wrap;justify-content:space-between}
 .load-video-tc div.item-duoi:before{content:'';width:100%;height:100%;position:absolute;left:0;top:0;background:url(../images/icon-video.png) no-repeat center;background-size:30px;cursor:pointer}
 .load-video-tc div.item-duoi iframe{width:100%;height:100%}
 .load-video-tc div.item-duoi span{display:block;text-align:left}
-.load-video-tc div.item-duoi span.ten{font-size:14px;font-family:'ro-b'}
-.load-video-tc div.item-duoi span.ngay{font-size:14px;font-family:'ro-r'}
+.load-video-tc div.item-duoi span.ten{font-size:14px;}
+.load-video-tc div.item-duoi span.ngay{font-size:14px;}
 .load-video-tc div.item-video{position:relative}
 .load-video-tc div.item-video a{position:relative;display:block;line-height:0;cursor:pointer}
 .load-video-tc div.item-video a img{object-fit:cover;height:419px}
@@ -706,7 +705,7 @@ div.box-tintuc-video{padding:50px 0}
 .view-newshome:hover{background-color:#000;color:#fff}
 .newshome-scroll{width:calc(100% - 44.5%);height:420px;overflow:hidden}
 .newshome-scroll ul li{margin-bottom:15px!important}
-.newshome-normal{display:block}
+.newshome-normal{display:block;border:0!important;margin-bottom:15px;}
 .pic-newshome-normal{float:left;width:34%;margin-right:3%;margin-bottom:0px}
 .pic-newshome-normal img{width:100%}
 .info-newshome-normal{float:left;width:calc(100% - 37%)}

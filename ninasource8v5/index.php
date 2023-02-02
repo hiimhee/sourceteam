@@ -30,5 +30,21 @@ $js = new JsMinify($config['website']['debug-js'], $func);
 /* Router */
 require_once LIBRARIES . "router.php";
 
+function compress_code($code) 
+{
+    $search = array(
+    '/\>[^\S ]+/s',
+    '/[^\S ]+\</s',
+    '/(\s)+/s'
+    );
+    $replace = array('>','<','\\1');
+    $code = preg_replace($search, $replace, $code);
+    return $code;
+}
+
+if(!$config['website']['debug-html']) ob_start("compress_code");
+
 /* Template */
 include TEMPLATE . "index.php";
+
+if(!$config['website']['debug-html']) ob_end_flush();

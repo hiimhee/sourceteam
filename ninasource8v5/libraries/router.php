@@ -31,6 +31,10 @@ $router->map('GET|POST', 'sitemap.xml', 'sitemap', 'sitemap');
 $router->map('GET|POST', '[a:com]', 'allpage', 'show');
 $router->map('GET|POST', '[a:com]/[a:lang]/', 'allpagelang', 'lang');
 $router->map('GET|POST', '[a:com]/[a:action]', 'account', 'account');
+
+
+# Enable extension=php_gd.dll in php.ini to resize images
+
 $router->map('GET', THUMBS . '/[i:w]x[i:h]x[i:z]/[**:src]', function ($w, $h, $z, $src) {
     global $func;
     $func->createThumb($w, $h, $z, $src, null, THUMBS);

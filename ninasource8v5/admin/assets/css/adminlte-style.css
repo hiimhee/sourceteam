@@ -178,9 +178,9 @@
 .my-checkbox .custom-control-input{cursor:pointer;z-index:1;width:100%;height:100%}
 .my-checkbox .custom-control-label{position:absolute;top:0px;left:0px;width:100%;height:100%}
 .my-checkbox .custom-control-label::before,.my-checkbox .custom-control-label::after{top:0px;left:0px;width:100%;height:100%}
-.status-box .my-checkbox {margin: unset;display: inline-block;margin-left: 4px;}
-.status-box .custom-control-label {top: 4px;}
-.status-box .custom-control-input {top: 4px;}
+.status-box .my-checkbox{margin:unset;display:inline-block;margin-left:4px;}
+.status-box .custom-control-label{top:4px;}
+.status-box .custom-control-input{top:4px;}
 .form-control-mini{width:50px;padding:0.25rem;text-align:center;line-height:normal;font-size:14px}
 .form-control-mini::-webkit-outer-spin-button,.form-control-mini::-webkit-inner-spin-button{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0}
 .form-control.no-validate:valid{border-color:#ced4da;background:none;padding:.375rem .75rem}
@@ -246,7 +246,7 @@ select.form-control option:disabled{color:#b8babb;font-style:italic}
 .select2-container--default .select2-selection--single .select2-selection__arrow b{margin-top:3px!important}
 .pagination{flex-wrap:wrap}
 .upload-file-image{border:1px solid #ebebeb;padding:0.5rem;position:relative;overflow:hidden}
-.upload-file-image img{width:auto;height:auto!important;margin:0 auto;display:block}
+.upload-file-image img{width:auto;height:auto!important;margin:0 auto;display:block;max-width:100%;}
 a.upload-file-image-remove,.delete_1hinh{display:flex;justify-content:center;align-items:center;background:#bd2130 linear-gradient(180deg,#c7424f,#bd2130) repeat-x!important;border-radius:3px;color:#fff!important;width:2rem;height:2rem;padding:0.4rem;position:absolute;top:0.5rem;right:0.5rem;z-index:2}
 a.upload-file-image-remove:hover,.delete_1hinh:hover{background:#111}
 @media(max-width:1201px){

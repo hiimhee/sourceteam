@@ -11,7 +11,6 @@ class Functions
         $this->d = $d;
         $this->cache = $cache;
     }
-
     function ischecked($list, $status)
     {
         $checked = '';
@@ -25,7 +24,6 @@ class Functions
         }
         return $checked;
     }
-
     public function GetWeekdays( $ngaytao = 0 , $full = 1 ) {
         if($ngaytao=='' or $ngaytao==0) return false;
         $str = date('Y-m-d H:i:s', $ngaytao);
@@ -2102,7 +2100,6 @@ class Functions
         $str = json_encode(json_decode($str), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         return $str;
     }
-
     //**************************************** function them --------------------------------*/
         /*check err*/
         function err()
@@ -2119,7 +2116,6 @@ class Functions
             $sqlc1="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_list WHERE find_in_set('hienthi',status) AND type ='".$type."' ORDER BY numb,id DESC";
             $arr_sqlc1=array();
             $danhmuc_cap1 = $this->d->rawQuery($sqlc1,$arr_sqlc1);
-
             if($showh2==1){
                 $start_h2 = '';
                 $end_h2 = '';
@@ -2127,38 +2123,30 @@ class Functions
                 $start_h2 = '';
                 $end_h2 = '';
             }
-
             $str='';
             $str.='<ul>';
             for($i=0;$i<count($danhmuc_cap1);$i++){
                     $str.='<li><a class="has-child transition" href="'.$danhmuc_cap1[$i][$sluglang].'">'.$start_h2.$danhmuc_cap1[$i]["ten"].$end_h2.'</a>';
-                    
                     $sqlc2="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_cat WHERE find_in_set('hienthi',status) AND type ='".$type."' and id_list = ".$danhmuc_cap1[$i]["id"]." ORDER BY numb,id DESC";
                     $arr_sqlc2=array();
                     $danhmuc_cap2 = $this->d->rawQuery($sqlc2,$arr_sqlc2);
-
                     if(count($danhmuc_cap2)>0){
                         $str.='<ul>';
                             for($j=0;$j<count($danhmuc_cap2);$j++){
                                 $str.='<li><a class="has-child transition" href="'.$danhmuc_cap2[$j][$sluglang].'">'.$start_h2.$danhmuc_cap2[$j]["ten"].$end_h2.'</a>';
-                                    
                                     $sqlc3="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_item WHERE find_in_set('hienthi',status) AND type ='".$type."' and id_cat = ".$danhmuc_cap2[$j]["id"]." ORDER BY numb,id DESC";
                                     $arr_sqlc3=array();
                                     $danhmuc_cap3 = $this->d->rawQuery($sqlc3,$arr_sqlc3);
-
                                     if(count($danhmuc_cap3)>0){
                                         $str.='<ul>';
                                             for($k=0;$k<count($danhmuc_cap3);$k++){
-                                                                                            
                                                 $sqlc4="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_sub WHERE find_in_set('hienthi',status) AND type ='".$type."' and id_item = ".$danhmuc_cap3[$k]["id"]." ORDER BY numb,id DESC";
                                                 $arr_sqlc4=array();
                                                 $danhmuc_cap4 = $this->d->rawQuery($sqlc4,$arr_sqlc4);
-                                                
                                                 $str.='<li><a class="has-child transition" href="'.$danhmuc_cap3[$k][$sluglang].'">'.$start_h2.$danhmuc_cap3[$k]["ten"].$end_h2.'</a>';
                                                 if(count($danhmuc_cap4)>0){
                                                     $str.='<ul>';
                                                         for($h=0;$h<count($danhmuc_cap4);$h++){
-                                                            
                                                             $str.='<li><a class="has-child transition" href="'.$danhmuc_cap4[$h][$sluglang].'">'.$start_h2.$danhmuc_cap4[$h]["ten"].$end_h2.'</a>';                                                            
                                                         }
                                                     $str.='</ul>';
@@ -2182,58 +2170,41 @@ class Functions
             $sqlc1="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_list WHERE find_in_set('hienthi',status) AND type ='".$type."' ORDER BY numb,id DESC";
             $arr_sqlc1=array();
             $danhmuc_cap1 = $this->d->rawQuery($sqlc1,$arr_sqlc1);
-            
             $str='';
             $str.='<ul>';
             for($i=0;$i<count($danhmuc_cap1);$i++){
-
                     $sqlc2="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_cat WHERE find_in_set('hienthi',status) AND type ='".$type."' and id_list = ".$danhmuc_cap1[$i]["id"]." ORDER BY numb,id DESC";
                     $arr_sqlc2=array();
                     $danhmuc_cap2 = $this->d->rawQuery($sqlc2,$arr_sqlc2);
                     if(count($danhmuc_cap2)>0) $showsp1 = '<span></span>';else $showsp1='';
-                    
                     if($danhmuc_cap1[$i]["id"]==$id_cap1){
-
                         $actsp1 = 'active';
                         $showsp1 = '<span class="active"></span>';
                         $showulc2 = 'show-ul-c2';
-
                     }else{$actsp1='';$showulc2 = '';}
-
                     $str.='<li>'.$showsp1.'<a href="'.$danhmuc_cap1[$i][$sluglang].'" class="'.$actsp1.'">'.$danhmuc_cap1[$i]["ten"].'</a>';
-                    
                     if(count($danhmuc_cap2)>0){
                         $str.='<ul class="'.$showulc2.'">';
                             for($j=0;$j<count($danhmuc_cap2);$j++){                         
-                                    
                                     $sqlc3="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_item WHERE find_in_set('hienthi',status) AND type ='".$type."' and id_cat = ".$danhmuc_cap2[$j]["id"]." ORDER BY numb,id DESC";
                                     $arr_sqlc3=array();
                                     $danhmuc_cap3 = $this->d->rawQuery($sqlc3,$arr_sqlc3);
-
                                     if(count($danhmuc_cap3)>0) $showsp2 = '<span></span>';else $showsp2='';
-
                                     if($danhmuc_cap2[$j]["id"]==$id_cap2){
-
                                         $actsp2 = 'active';
-                                        
                                     }else{$actsp2='';}
-
                                     $str.='<li>'.$showsp2.'<a href="'.$danhmuc_cap2[$j][$sluglang].'" class="'.$actsp2.'">'.$danhmuc_cap2[$j]["ten"].'</a>';
-                                    
                                     if(count($danhmuc_cap3)>0){
                                         $str.='<ul>';
                                             for($k=0;$k<count($danhmuc_cap3);$k++){
-                                                                                            
                                                 $sqlc4="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table."_sub WHERE find_in_set('hienthi',status) AND type ='".$type."' and id_item = ".$danhmuc_cap3[$k]["id"]." ORDER BY numb,id DESC";
                                                 $arr_sqlc4=array();
                                                 $danhmuc_cap4 = $this->d->rawQuery($sqlc4,$arr_sqlc4);
-
                                                 if(count($danhmuc_cap4)>0) $showsp3 = '<span></span>';else $showsp3='';
                                                 $str.='<li>'.$showsp3.'<a href="'.$danhmuc_cap3[$k][$sluglang].'">'.$danhmuc_cap3[$k]["ten"].'</a>';
                                                 if(count($danhmuc_cap4)>0){
                                                     $str.='<ul>';
                                                         for($h=0;$h<count($danhmuc_cap4);$h++){
-                                                            
                                                             $str.='<li><span></span><a href="'.$danhmuc_cap4[$h][$sluglang].'">'.$danhmuc_cap4[$h]["ten"].'</a>';
                                                         }
                                                     $str.='</ul>';
@@ -2256,7 +2227,6 @@ class Functions
             $sqlc1="SELECT name$lang as ten, slugvi, slugen, id FROM table_".$table." WHERE find_in_set('hienthi',status) AND type ='".$type."' ORDER BY numb,id DESC";
             $arr_sqlc1=array();
             $danhmuc_cap1 = $this->d->rawQuery($sqlc1,$arr_sqlc1);
-
             $str='';
             $str.='<ul>';
             for($i=0;$i<count($danhmuc_cap1);$i++){
@@ -2285,14 +2255,14 @@ class Functions
                     $str .='<a class="'.$cssitem.' text-decoration-none w-clear" href="'.$v[$sluglang].'" title="'.$v['name'.$lang].'">
                         <p class="pic-news scale-img">'.$this->getImage(['class' => 'lazy w-100', 'sizes' => '400x300x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]).'</p>
                         <div class="info-news">
-                            <h3 class="name-news">'.$v['name'.$lang].'</h3>
+                            <h3 class="name-news line-clamp-2">'.$v['name'.$lang].'</h3>
                             <p class="time-news">'.ngaydang.': '.date("d/m/Y h:i A",$v['date_created']).'</p>
                             <div class="desc-news text-split">'.$v['desc'.$lang].'</div>
-                            <span class="view-news">Xem chi tiết <i class="fa-regular fa-right-long"></i></span>
+                            <span class="view-news d-none">Xem chi tiết <i class="fa-regular fa-right-long"></i></span>
                         </div>
                     </a>';                  
          }  
-         return $str;           
+         return $str;      
         }
         function lay_tieuchi($truyvan,$cssitem,$thumb){
                 global $lang,$sluglang;
@@ -2307,35 +2277,27 @@ class Functions
         <?php   }           
         }
         /*--- Lấy baiviet ----*/
-
         /*--- Lấy thuvien  ----*/
         function lay_thuvien($truyvan,$popup=0,$thumb){
                 global $lang,$sluglang;
-                
                 if($popup==1){
-
                 foreach($truyvan as $k => $v){ 
-
                     $sql="select photo from #_gallery where find_in_set('hienthi',status) and id_parent =".$v['id']."  and com='product' and type = '".$v['type']."' and kind='man' and val = '".$v['type']."' order by numb,id desc";
                     $arr_cap=array();
                     $hinhanhsp = $this->d->rawQuery($sql,$arr_cap);
-                    
                     ?>
                     <div class="album">
                         <a class=" text-decoration-none" data-fancybox="gallery<?=$v['id']?>" href="<?=UPLOAD_PRODUCT_L.$v['photo']?>" data-caption="<?=$v['name'.$lang]?>">
                             <p class="pic-album hover_sang2"><img onerror="this.src='<?=$thumb?>assets/images/noimage.png';" src="<?=$thumb?><?=UPLOAD_PRODUCT_L.$v['photo']?>" alt="<?=$v['name'.$lang]?>" width="350" height="350"/></p>
                             <h3 class="name-album text-split"><span><?=$v['name'.$lang]?></span></h3>
                         </a>
-
                    <?php foreach($hinhanhsp as $k2 => $v2){ ?>
-
                         <a class=" text-decoration-none none" data-fancybox="gallery<?=$v['id']?>" href="<?=UPLOAD_PRODUCT_L.$v2['photo']?>" data-caption="<?=$v['name'.$lang]?>">
                             <p class="pic-album hover_sang2"><img onerror="this.src='<?=$thumb?>assets/images/noimage.png';" src="<?=$thumb?><?=UPLOAD_PRODUCT_L.$v2['photo']?>" alt="<?=$row_detail['name'.$lang]?>" width="350" height="350"/></p>
                         </a>
                     <?php } ?>
                     </div>
                 <?php  } }else{
-
                 foreach($truyvan as $k => $v){ ?>
                     <a class="album text-decoration-none" href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
                         <p class="pic-album hover_sang2"><img onerror="this.src='<?=$thumb?>assets/images/noimage.png';" src="<?=$thumb?><?=UPLOAD_PRODUCT_L.$v['photo']?>" alt="<?=$v['name'.$lang]?>" width="350" height="350"/></p>
@@ -2344,13 +2306,10 @@ class Functions
         <?php } }               
         }
         /*--- Lấy thuvien  ----*/
-
         /*--- Lấy thuvien  photo----*/
         function lay_thuvienphoto($truyvan,$popup=0,$thumb){
                 global $lang,$sluglang;
-                                
                 foreach($truyvan as $k => $v){ 
-                    
                     ?>
                     <div class="album">
                         <a class=" text-decoration-none" data-fancybox="gallery<?=$v['id']?>" href="<?=UPLOAD_PHOTO_L.$v['photo']?>" data-caption="<?=$v['name'.$lang]?>">
@@ -2361,11 +2320,9 @@ class Functions
                 <?php  }                
         }
         /*--- Lấy thuvien photo ----*/
-
         /*--- Lấy video ----*/
         function lay_video($truyvan,$thumb){
                 global $lang,$sluglang;
-                                
                 foreach($truyvan as $k => $v){ ?>
                     <a class="video text-decoration-none" data-fancybox="video" data-src="<?=$v['link_video']?>" title="<?=$v['name'.$lang]?>">
                         <p class="pic-video scale-img"><img onerror="this.src='<?=$thumb?>assets/images/noimage.png';" src="https://img.youtube.com/vi/<?=$this->getYoutube($v['link_video']);?>/0.jpg" alt="<?=$v['name'.$lang]?>"/></p>
@@ -2374,7 +2331,6 @@ class Functions
         <?php }             
         }
         /*--- Lấy video ----*/
-
         /*--- Lấy sản phẩm yêu thích ----*/
         function lay_sanpham_yeuthich($v){
                 global $lang,$sluglang,$config;
@@ -2382,7 +2338,6 @@ class Functions
                 $nametype = 'san-pham';
                 $dongdau = THUMBS.'/390x390x2/';
                 //$dongdau = WATERMARK.'/product/360x390x1/';
-                                
                     $str .='<div class="product">
                         <a class="box-product text-decoration-none" href="'.$v[$sluglang].'" title="'.$v['name'.$lang].'">
                             <p class="pic-product scale-img"><img onerror="this.src=\''.$dongdau.'assets/images/noimage.png\'" src="'.$dongdau.UPLOAD_PRODUCT_L.$v['photo'].'" alt="'.$v['name'.$lang].'" width="350" height="350"/></p>
@@ -2394,29 +2349,24 @@ class Functions
                                     <span class="price-per">-'.round(100-($v['sale_price']/$v['regular_price']*100)).'%</span>';
                                     //<span class="price-per">-'.$v['giakm'].'%</span>
                                 } else {
-
                                     if($v['regular_price']!=0) $s_gia = number_format($v['regular_price'],0, ',', '.').'đ';else $s_gia = lienhe;
                                     $str .='<span class="price-new"><b>Giá Niêm Yết :</b> '.$s_gia.'</span>';
                                 }
                             $str .='</p>
                         </a>';
-
                         if(in_array($v['id'], $_SESSION['sanphamyeuthich'])==true){
                             $act_love = 'act-love';
                         }else{
                             $act_love = '';
                         }
-
                         $str .='<p class="option-product transition w-clear">
                                 <span class="transition yeuthich '.$act_love.'" data-id="'.$v['id'].'"><i class="far fa-heart"></i></span>
                                 <span class="transition xemnhanh" data-id="'.$v['id'].'"><i class="far fa-eye"></i></span>
                         </p>';
-                        
                             /*$str .='<p class="cart-product w-clear">
                                 <span class="cart-add addcart transition" data-id="'.$v['id'].'" data-action="addnow">Thêm vào giỏ hàng</span>
                                 <span class="cart-buy addcart transition" data-id="'.$v['id'].'" data-action="buynow">Mua ngay</span>
                             </p>';*/
-                        
                     $str .='</div>';                
                 return $str;
         }
@@ -2427,7 +2377,6 @@ class Functions
             $arr_sqlc_num=array();
             return $truyvan = $this->d->rawQuery($sql,$arr_sqlc_num);
         }
-
         /*lấy cấp sản phẩm theo id_list, cat, item, sub*/
         function get_product_id($dieukien,$typesp,$loaiid,$iddanhmuc,$gioihan){
             global $lang;
@@ -2435,7 +2384,6 @@ class Functions
             $arr_cap=array();           
             return $truyvan = $this->d->rawQuery($sql,$arr_cap);            
         }
-
         /*lấy sản phẩm theo loại noibat, banchay */
         function get_product($dieukien,$typesp,$gioihan){
             global $lang;
@@ -2443,7 +2391,6 @@ class Functions
             $arr_cap=array();           
             return $truyvan = $this->d->rawQuery($sql,$arr_cap);            
         }
-
         /*lấy bài viết theo loại noibat */
         function get_baiviet($dieukien,$typesp,$gioihan){
             global $lang;
@@ -2453,10 +2400,8 @@ class Functions
         }
         function isGoogleSpeed(){
             if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Lighthouse') === false){
-
             return false;
             }
             return true;
         }
-
 }

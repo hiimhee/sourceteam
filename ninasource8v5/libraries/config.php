@@ -1,4 +1,7 @@
 <?php
+
+// phpinfo();
+
 if (!defined('LIBRARIES')) die("Error");
 
 /* Timezone */
@@ -8,7 +11,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 define('NN_CONTRACT', 'MSHD');
 define('NN_AUTHOR', 'NINA_DEVELOPER');
 
-/* Cấu hình bản quyền chống copy */
+/* Cấu hình bản quyền sao chép */
 define('COPYSITE', true);
 
 /* Cấu hình giỏ hàng */
@@ -45,8 +48,9 @@ $config = array(
         'secret' => '$nina@',
         'salt' => 'swKJjeS!t',
         'debug-developer' => true,
-        'debug-css' => true,
-        'debug-js' => true,
+        'debug-css' => false, // Compress CSS
+        'debug-js' => false, // Compress Js
+        'debug-html' => false, // Compress HTML
         'index' => false,
         'image' => array(
             'hasWebp' => false,
