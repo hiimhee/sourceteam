@@ -86,10 +86,12 @@
     <?= $addons->set('footer-map', 'footer-map', 6); ?>
     <?= $addons->set('messages-facebook', 'messages-facebook', 2); ?>
 </div>
+<?php if(LIKESITE) { ?>
 <a class="cart-fixed liked-fixed text-decoration-none" href="yeu-thich" title="Danh sách yêu thích">
     <i class="fas fa-heart"></i>
     <span class="count-like"><?= (!empty($_SESSION['list_saved'])) ? count(json_decode($_SESSION['list_saved'], true)) : 0 ?></span>
 </a>
+<?php } ?>
 <?php if ($com != 'gio-hang' and CARTSITE) { ?>
     <a class="cart-fixed text-decoration-none" href="gio-hang" title="Giỏ hàng">
         <i class="fas fa-shopping-bag"></i>

@@ -20,6 +20,7 @@
     var LIST_SAVED = '';
     var CARTSITE = '<?= (CARTSITE) ? true : false ?>';
     var FILERSITE = '<?= (FILERSITE) ? true : false ?>';
+    var LIKESITE = '<?= (LIKESITE) ? true : false ?>';
 </script>
 <!-- Js Files -->
 <?php
@@ -31,7 +32,7 @@
     $js->set("confirm/confirm.js");
     $js->set("holdon/HoldOn.js");
     $js->set("mmenu/mmenu.js");
-    //$js->set("easyticker/easy-ticker.js");
+    // $js->set("easyticker/easy-ticker.js");
     $js->set("fotorama/fotorama.js");
     $js->set("owlcarousel2/owl.carousel.js");
     $js->set("magiczoomplus/magiczoomplus.js");
@@ -40,13 +41,13 @@
     $js->set("photobox/photobox.js");
     // $js->set("simplenotify/simple-notify.js");
     // $js->set("fileuploader/jquery.fileuploader.min.js");
-    //$js->set("datetimepicker/php-date-formatter.min.js");
-    //$js->set("datetimepicker/jquery.mousewheel.js");
-    //$js->set("datetimepicker/jquery.datetimepicker.js");
+    // $js->set("datetimepicker/php-date-formatter.min.js");
+    // $js->set("datetimepicker/jquery.mousewheel.js");
+    // $js->set("datetimepicker/jquery.datetimepicker.js");
     $js->set("js/functions.js");
     $js->set("js/shiner.min.js");
     $js->set("js/placeholderTypewriter.js");
-    //$js->set("js/comment.js");
+    // $js->set("js/comment.js");
     $js->set("js/apps.js");
     echo $js->get();
 ?>
@@ -110,6 +111,20 @@
         $(this).parent('.list_<?=$value['id']?>').find('a').removeClass('active');
         $(this).addClass('active');
         init_paging_category_list('<?=$value['id']?>', 'list_<?=$value['id']?>', 'page_danhmuc_list<?=$value['id']?>', 4, 'product', 'san-pham', "and find_in_set('noibat',status)");
+    });
+</script>
+<?php } ?>
+<!-- Demo sản phẩm nổi bật theo từng danh mục cấp 1 & 2 xem thêm -->
+<?php foreach ($splistmenu as $key => $value) { ?>
+<script>
+    $(document).ready(function() {
+        init_paging_category_list_more('<?=$value['id']?>', 'list2_<?=$value['id']?>', 'page_danhmuc_list2<?=$value['id']?>', 4, 'product', 'san-pham', "and find_in_set('noibat',status)");
+    });
+    $(document).on('click', '.list2_<?=$value['id']?> a', function(event) {
+        event.preventDefault();
+        $(this).parent('.list2_<?=$value['id']?>').find('a').removeClass('active');
+        $(this).addClass('active');
+        init_paging_category_list_more('<?=$value['id']?>', 'list2_<?=$value['id']?>', 'page_danhmuc_list2<?=$value['id']?>', 4, 'product', 'san-pham', "and find_in_set('noibat',status)");
     });
 </script>
 <?php } ?>
@@ -242,10 +257,12 @@
     });
 </script>
 <?php } ?>
+<?php if(LIKESITE) { ?>
 <!-- Sản phẩm yêu thích -->
 <?php if(isset($_SESSION['list_saved']) and $_SESSION['list_saved']!='') { ?>
 <script>
     var LIST_SAVED = <?php echo json_encode( array_column( json_decode($_SESSION['list_saved'], true), 'id' ) ) ?>;
     reloadLike(LIST_SAVED);
 </script>
+<?php } ?>
 <?php } ?>

@@ -150,6 +150,22 @@
                                     <div class="payments-info payments-info-<?= $value['id'] ?> transition"><?= str_replace("\n", "<br>", $value['desc' . $lang]) ?></div>
                                 </div>
                             <?php } ?>
+                            <?php if(PAYMENTSITE) { ?>
+                            <div class="payments-cart custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="payments-alepay" name="dataOrder[payments]" value="alepay" <?= (!empty($flashPayment) && $flashPayment == 'alepay') ? 'checked' : '' ?> required>
+                                <label class="payments-label custom-control-label" for="payments-alepay" data-payments="alepay">Thanh toán qua cổng Alepay <img src="assets/images/alego-Logo.png" /></label>
+                                <div class="payments-info payments-info-alepay transition">
+                                    <b>AlePay</b> là một hệ thống thanh toán trực tuyến của <b>Ngân lượng</b>, cho phép thực hiện các giao dịch thanh toán trực tuyến một cách đơn giản, nhanh chóng và an toàn khi sử dụng thẻ tín dụng.
+                                </div>
+                            </div>
+                            <div class="payments-cart custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="payments-momo" name="dataOrder[payments]" value="momo" <?= (!empty($flashPayment) && $flashPayment == 'momo') ? 'checked' : '' ?> required>
+                                <label class="payments-label custom-control-label" for="payments-momo" data-payments="momo">Thanh toán qua cổng Momo <img src="assets/images/MoMo_Logo.png" /></label>
+                                <div class="payments-info payments-info-momo transition">
+                                    <b>Momo</b> là một hệ thống thanh toán trực tuyến cho phép thực hiện các giao dịch thanh toán trực tuyến một cách đơn giản, nhanh chóng và an toàn khi sử dụng ứng dụng <b>Momo</b>.
+                                </div>
+                            </div>
+                            <?php } ?>
                         </div>
                         <p class="title-cart"><?= thongtingiaohang ?>:</p>
                         <div class="information-cart">

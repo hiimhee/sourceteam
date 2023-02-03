@@ -82,6 +82,28 @@
     </div>
     <div class="page_tabloai_more"></div>
 </div>
+<!-- Sản phẩm theo danh mục cấp 1 & 2 -->
+<?php foreach ($splistmenu as $key => $value) {
+    $spcatmenu = $d->rawQuery("select name$lang, slugvi, id from #_product_cat where type = ? and find_in_set('hienthi',status) and id_list = ? order by numb,id desc",array('san-pham', $value['id']));
+?>
+<div class="wrap-product wrap-content">
+    <div class="d-flex align-items-center mb-3">
+        <div class="title-main m-0"><span><?=$value['name'.$lang]?></span></div>        
+        <a class="text-dark ml-auto" href="<?=$value[$sluglang]?>">
+            Xem tất cả 
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.19751 10.62L5.00084 6.81667C5.45001 6.3675 5.45001 5.6325 5.00084 5.18334L1.19751 1.38" stroke="#4A4A4A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+    <div class="list_monnb banchay_list list2_<?=$value['id']?> ml-3">
+        <a class="mr-2 font-weight-bold" data-id="0">Tất cả</a>
+        <?php foreach ($spcatmenu as $key2 => $value2) { ?>
+        <a class="mr-2 font-weight-bold" data-id="<?=$value2['id']?>"><?=$value2['name'.$lang]?></a>
+        <?php } ?>
+    </div>
+    <div class="page_danhmuc page_danhmuc_list2<?=$value['id']?>"></div>
+    <div class="clear"></div>
+</div>
+<?php } ?>
 <?php /*
 <?php if (count($brand)) { ?>
     <div class="wrap-brand">

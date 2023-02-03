@@ -149,7 +149,9 @@ class Functions
         <?php } 
         foreach ($arr as $k => $v) { ?>
             <div class="product">
+                <?php if(LIKESITE) { ?>
                 <a href="#" class="save-listing" data-id="<?=$v['id']?>"><i class="far fa-heart"></i></a>
+                <?php } ?>
                 <a class="box-product text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['name' . $lang] ?>">
                     <p class="pic-product scale-img">
                         <?= $this->getImage(['sizes' => '270x270x2', 'isWatermark' => false, 'prefix' => 'product', 'upload' => UPLOAD_PRODUCT_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]) ?>
@@ -829,6 +831,16 @@ class Functions
         $page_transfer = $page;
         $numb = $numb;
         include("./templates/layout/transfer.php");
+        exit();
+    }
+    public function transfer_api($msg = '', $page = '', $numb = true)
+    {
+        global $configBase;
+        $basehref = $configBase;
+        $showtext = $msg;
+        $page_transfer = $page;
+        $numb = $numb;
+        include("../../../templates/layout/transfer.php");
         exit();
     }
     /* Redirect */

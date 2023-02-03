@@ -102,7 +102,7 @@ $config['order']['excel'] = true;
 $config['order']['word'] = true;
 $config['order']['excelall'] = false;
 $config['order']['wordall'] = false;
-$config['order']['thumb'] = '100x100x1';
+$config['order']['thumb'] = '55x55x2';
 
 /* Quản lý thông báo đẩy */
 $config['onesignal'] = false;

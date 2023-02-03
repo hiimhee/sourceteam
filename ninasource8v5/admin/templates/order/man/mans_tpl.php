@@ -16,7 +16,6 @@ $linkWord = "index.php?com=wordAll";
         </div>
     </div>
 </section>
-
 <!-- Main content -->
 <section class="content">
     <div class="row">
@@ -186,7 +185,14 @@ $linkWord = "index.php?com=wordAll";
                                 </td>
                                 <td class="align-middle"><?= date("h:i:s A - d/m/Y", $items[$i]['date_created']) ?></td>
                                 <td class="align-middle">
-                                    <?php $order_payment = $func->getInfoDetail('namevi', 'news', $items[$i]['order_payment']); ?>
+                                    <?php $order_payment = $func->getInfoDetail('namevi', 'news', $items[$i]['order_payment']);
+                                        if($items[$i]['order_payment'] == 1000) {
+                                            $order_payment['namevi'] = 'Thanh toán Alepay';
+                                        }
+                                        if($items[$i]['order_payment'] == 1001) {
+                                            $order_payment['namevi'] = 'Thanh toán Momo';
+                                        }
+                                    ?>
                                     <span class="text-info"><?= $order_payment['namevi'] ?></span>
                                 </td>
                                 <td class="align-middle">

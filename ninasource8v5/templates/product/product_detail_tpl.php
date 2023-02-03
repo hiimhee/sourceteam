@@ -138,18 +138,19 @@
                             <?php } ?>
                         </div>
                     <?php } ?>
-                    <?php if(CARTSITE == true) { ?>
-                        <li class="w-clear">
-                            <label class="attr-label-pro-detail d-block"><?=soluong?>:</label>
-                            <div class="attr-content-pro-detail d-block">
-                                <div class="quantity-pro-detail">
-                                    <span class="quantity-minus-pro-detail">-</span>
-                                    <input type="number" class="qty-pro" min="1" value="1" readonly />
-                                    <span class="quantity-plus-pro-detail">+</span>
-                                </div>
+                <?php } ?>
+
+                <?php if(CARTSITE == true) { ?>
+                    <li class="w-clear">
+                        <label class="attr-label-pro-detail d-block"><?=soluong?>:</label>
+                        <div class="attr-content-pro-detail d-block">
+                            <div class="quantity-pro-detail">
+                                <span class="quantity-minus-pro-detail">-</span>
+                                <input type="number" class="qty-pro" min="1" value="1" readonly />
+                                <span class="quantity-plus-pro-detail">+</span>
                             </div>
-                        </li>
-                    <?php } ?>
+                        </div>
+                    </li>
                 <?php } ?>
 
                 <?php /* Dành cho giỏ hàng size - color không đổi giá ?>

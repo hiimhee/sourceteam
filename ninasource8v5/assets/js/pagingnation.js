@@ -57,6 +57,18 @@ function init_paging_category_more(a = 0, t = "", e = 0, n = "", p = "", d = "",
         $("." + t).append(a); NN_FRAMEWORK.Lazys(); reloadLike(LIST_SAVED);
     });
 }
+function init_paging_category_list_more(a = 0, t = "", e = "", n = 0, p = "", d = "", i = "") {
+    if ("" != t) {
+        0 == $("." + t + " a.active").length &&
+            $("." + t + " a")
+                .eq(0)
+                .addClass("active");
+        var l = $("." + t + " a.active").data("id");
+    }
+    $.ajax({ url: "api/paging.php", type: "post", dataType: "html", data: {viewmore: 1, slug_lang:slug_lang, id_danhmuc: a, page_per: n, table_select: p, type_select: d, where_select: i, tab_return: e, id_list: l } }).done(function (a) {
+        $("." + e).empty(); $("." + e).append(a); NN_FRAMEWORK.Lazys(); reloadLike(LIST_SAVED);
+    });
+}
 function init_paging_category_list(a = 0, t = "", e = "", n = 0, p = "", d = "", i = "") {
     if ("" != t) {
         0 == $("." + t + " a.active").length &&

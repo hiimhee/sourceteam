@@ -14,7 +14,6 @@ $linkSave = "index.php?com=order&act=save";
         </div>
     </div>
 </section>
-
 <!-- Main content -->
 <section class="content">
     <form method="post" action="<?= $linkSave ?>" enctype="multipart/form-data">
@@ -34,7 +33,11 @@ $linkSave = "index.php?com=order&act=save";
                 </div>
                 <div class="form-group col-md-4 col-sm-6">
                     <label>Hình thức thanh toán:</label>
-                    <?php $order_payment = $func->getInfoDetail('namevi', 'news', @$item['order_payment']); ?>
+                    <?php $order_payment = $func->getInfoDetail('namevi', 'news', @$item['order_payment']); if($item['order_payment'] == 1000) {
+                                            $order_payment['namevi'] = 'Thanh toán Alepay';
+                                        } if($item['order_payment'] == 1001) {
+                                            $order_payment['namevi'] = 'Thanh toán Momo';
+                                        } ?>
                     <p class="text-info"><?= $order_payment['namevi'] ?></p>
                 </div>
                 <div class="form-group col-md-4 col-sm-6">
@@ -82,11 +85,11 @@ $linkSave = "index.php?com=order&act=save";
                     <textarea class="form-control text-sm" name="data[notes]" id="notes" rows="5" placeholder="Ghi chú"><?= @$item['notes'] ?></textarea>
                 </div>
                 <?php /* ?>
-				    <div class="form-group">
-	                    <label for="numb" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
-	                    <input type="number" class="form-control form-control-mini d-inline-block align-middle text-sm" min="0" name="data[numb]" id="numb" placeholder="Số thứ tự" value="<?=isset($item['numb']) ? $item['numb'] : 1?>">
-	                </div>
-	            <?php */ ?>
+                    <div class="form-group">
+                        <label for="numb" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
+                        <input type="number" class="form-control form-control-mini d-inline-block align-middle text-sm" min="0" name="data[numb]" id="numb" placeholder="Số thứ tự" value="<?=isset($item['numb']) ? $item['numb'] : 1?>">
+                    </div>
+                <?php */ ?>
             </div>
         </div>
         <div class="card card-primary card-outline text-sm">

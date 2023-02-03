@@ -15,6 +15,7 @@ $city = $d->rawQuery("select name, id from #_city order by id asc");
 $payments_info = $d->rawQuery("select name$lang, desc$lang, id from #_news where type = ? order by numb,id desc", array('hinh-thuc-thanh-toan'));
 
 if (!empty($_POST['thanhtoan'])) {
+
     /* Check order */
     if (empty($_SESSION['cart'])) {
         $func->transfer("Đơn hàng không hợp lệ. Vui lòng thử lại sau.", $configBase, false);
@@ -74,8 +75,6 @@ if (!empty($_POST['thanhtoan'])) {
             }
         }
 
-
-
         // /* Price */
         // $temp_price = $cart->getOrderTotal();
         // $total_price = (!empty($ship_price)) ? $cart->getOrderTotal() + $ship_price : $cart->getOrderTotal();
@@ -114,14 +113,13 @@ if (!empty($_POST['thanhtoan'])) {
         $response['messages'][] = 'Chưa chọn phường/xã';
     }
 
-
     if (empty($dataOrder['address'])) {
         $response['messages'][] = 'Địa chỉ không được trống';
     }
 
-    if (empty($dataOrder['email'])) {
-        $response['messages'][] = 'Email không được trống';
-    }
+    // if (empty($dataOrder['email'])) {
+    //     $response['messages'][] = 'Email không được trống';
+    // }
 
     if (!empty($dataOrder['email']) && !$func->isEmail($dataOrder['email'])) {
         $response['messages'][] = 'Email không hợp lệ';
@@ -233,6 +231,16 @@ if (!empty($_POST['thanhtoan'])) {
     $data_donhang['district'] = $district;
     $data_donhang['ward'] = $ward;
     $data_donhang['numb'] = 1;
+
+    if($dataOrder['payments'] == 'alepay') {
+        $_SESSION['ALEPAY'] = $data_donhang;
+        $func->redirect('sources/paymentAPI/alepay/index.php'); exit;
+    }
+    if($dataOrder['payments'] == 'momo') {
+        $_SESSION['ALEPAY'] = $data_donhang;
+        $func->redirect('sources/paymentAPI/momo/index.php'); exit;
+    }
+    
     $id_insert = $d->insert('order', $data_donhang);
 
     /* lưu đơn hàng chi tiết */

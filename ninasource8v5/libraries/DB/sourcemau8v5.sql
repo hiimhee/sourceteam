@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 10:36 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Feb 03, 2023 at 09:03 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `table_city` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
+  `code` varchar(2) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -117,16 +116,16 @@ INSERT INTO `table_city` (`id`, `name`, `slug`, `level`, `code`, `numb`, `status
 
 CREATE TABLE `table_color` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type_show` tinyint(1) DEFAULT '0',
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `photo` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `color` varchar(15) DEFAULT NULL,
+  `type_show` tinyint(1) DEFAULT 0,
+  `type` varchar(30) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -147,18 +146,18 @@ INSERT INTO `table_color` (`id`, `photo`, `namevi`, `nameen`, `color`, `type_sho
 
 CREATE TABLE `table_comment` (
   `id` int(11) NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `id_variant` int(11) DEFAULT '0',
-  `star` int(11) DEFAULT '0',
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_posted` int(11) DEFAULT '0'
+  `id_parent` int(11) DEFAULT 0,
+  `id_variant` int(11) DEFAULT 0,
+  `star` int(11) DEFAULT 0,
+  `title` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `poster` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_posted` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -196,8 +195,8 @@ INSERT INTO `table_comment` (`id`, `id_parent`, `id_variant`, `star`, `title`, `
 
 CREATE TABLE `table_comment_photo` (
   `id` int(11) NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id_parent` int(11) DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -226,9 +225,9 @@ INSERT INTO `table_comment_photo` (`id`, `id_parent`, `photo`) VALUES
 
 CREATE TABLE `table_comment_video` (
   `id` int(11) NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id_parent` int(11) DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL,
+  `video` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -249,18 +248,18 @@ INSERT INTO `table_comment_video` (`id`, `id_parent`, `photo`, `video`) VALUES
 
 CREATE TABLE `table_contact` (
   `id` int(11) UNSIGNED NOT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` mediumtext COLLATE utf8mb4_unicode_ci,
-  `notes` mediumtext COLLATE utf8mb4_unicode_ci,
-  `address` mediumtext COLLATE utf8mb4_unicode_ci,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0',
-  `numb` int(11) DEFAULT '0'
+  `fullname` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `content` mediumtext DEFAULT NULL,
+  `notes` mediumtext DEFAULT NULL,
+  `address` mediumtext DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -271,8 +270,8 @@ CREATE TABLE `table_contact` (
 
 CREATE TABLE `table_counter` (
   `id` int(11) NOT NULL,
-  `tm` int(11) DEFAULT '0',
-  `ip` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT '0.0.0.0'
+  `tm` int(11) DEFAULT 0,
+  `ip` varchar(16) DEFAULT '0.0.0.0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -3846,7 +3845,24 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 (10340, 1675300563, '::1'),
 (10341, 1675302456, '::1'),
 (10342, 1675303843, '::1'),
-(10343, 1675330034, '::1');
+(10343, 1675330034, '::1'),
+(0, 1675389620, '::1'),
+(10344, 1675389705, '127.0.0.1'),
+(10345, 1675390942, '::1'),
+(10346, 1675391990, '::1'),
+(10347, 1675392905, '::1'),
+(10348, 1675393847, '::1'),
+(10349, 1675394748, '::1'),
+(10350, 1675395699, '::1'),
+(10351, 1675397139, '::1'),
+(10352, 1675399424, '127.0.0.1'),
+(10353, 1675399453, '::1'),
+(10354, 1675404410, '::1'),
+(10355, 1675405026, '127.0.0.1'),
+(10356, 1675405930, '127.0.0.1'),
+(10357, 1675406831, '127.0.0.1'),
+(10358, 1675409219, '127.0.0.1'),
+(10359, 1675410947, '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -3856,13 +3872,13 @@ INSERT INTO `table_counter` (`id`, `tm`, `ip`) VALUES
 
 CREATE TABLE `table_coupon` (
   `id` int(11) UNSIGNED NOT NULL,
-  `ma` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `stt` int(11) DEFAULT '0',
-  `loai` int(1) DEFAULT '0',
-  `tinhtrang` int(1) DEFAULT '0',
-  `chietkhau` int(11) DEFAULT '0',
-  `ngaybatdau` int(11) DEFAULT '0',
-  `ngayketthuc` int(11) DEFAULT '0',
+  `ma` varchar(30) DEFAULT NULL,
+  `stt` int(11) DEFAULT 0,
+  `loai` int(1) DEFAULT 0,
+  `tinhtrang` int(1) DEFAULT 0,
+  `chietkhau` int(11) DEFAULT 0,
+  `ngaybatdau` int(11) DEFAULT 0,
+  `ngayketthuc` int(11) DEFAULT 0,
   `solan` int(11) NOT NULL,
   `toithieu` double NOT NULL,
   `toida` double NOT NULL
@@ -3886,15 +3902,15 @@ INSERT INTO `table_coupon` (`id`, `ma`, `stt`, `loai`, `tinhtrang`, `chietkhau`,
 
 CREATE TABLE `table_district` (
   `id` int(11) NOT NULL,
-  `id_city` int(11) DEFAULT '0',
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `id_city` int(11) DEFAULT 0,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `code` varchar(3) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4617,9 +4633,9 @@ INSERT INTO `table_district` (`id`, `id_city`, `name`, `slug`, `code`, `level`, 
 
 CREATE TABLE `table_excel` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0'
+  `photo` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4645,22 +4661,22 @@ INSERT INTO `table_excel` (`id`, `photo`, `type`, `numb`) VALUES
 
 CREATE TABLE `table_gallery` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hash` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_color` int(11) DEFAULT '0',
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link_video` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `com` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kind` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `val` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `id_parent` int(11) DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL,
+  `hash` varchar(20) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `id_color` int(11) DEFAULT 0,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `link_video` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `type` varchar(30) DEFAULT NULL,
+  `com` varchar(255) DEFAULT NULL,
+  `kind` varchar(30) DEFAULT NULL,
+  `val` varchar(30) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4697,10 +4713,10 @@ INSERT INTO `table_gallery` (`id`, `id_parent`, `photo`, `hash`, `nameen`, `name
 
 CREATE TABLE `table_lang` (
   `id` int(11) UNSIGNED NOT NULL,
-  `lang_define` mediumtext COLLATE utf8mb4_unicode_ci,
-  `langvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `langen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) UNSIGNED DEFAULT '0'
+  `lang_define` mediumtext DEFAULT NULL,
+  `langvi` mediumtext DEFAULT NULL,
+  `langen` mediumtext DEFAULT NULL,
+  `numb` int(11) UNSIGNED DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4881,21 +4897,21 @@ INSERT INTO `table_lang` (`id`, `lang_define`, `langvi`, `langen`, `numb`) VALUE
 
 CREATE TABLE `table_member` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_social` tinyint(1) DEFAULT '0',
-  `username` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confirm_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gender` tinyint(1) DEFAULT '0',
-  `login_session` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lastlogin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `birthday` int(11) DEFAULT '0',
-  `numb` int(11) DEFAULT '0'
+  `id_social` tinyint(1) DEFAULT 0,
+  `username` varchar(225) DEFAULT NULL,
+  `password` varchar(225) DEFAULT NULL,
+  `confirm_code` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `fullname` varchar(225) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(225) DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT 0,
+  `login_session` varchar(255) DEFAULT NULL,
+  `lastlogin` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `birthday` int(11) DEFAULT 0,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -4906,27 +4922,27 @@ CREATE TABLE `table_member` (
 
 CREATE TABLE `table_news` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `id_item` int(11) DEFAULT '0',
-  `id_cat` int(11) DEFAULT '0',
-  `id_sub` int(11) DEFAULT '0',
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0',
-  `view` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `id_item` int(11) DEFAULT 0,
+  `id_cat` int(11) DEFAULT 0,
+  `id_sub` int(11) DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL,
+  `photo2` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0,
+  `view` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -4954,20 +4970,20 @@ INSERT INTO `table_news` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `photo
 
 CREATE TABLE `table_newsletter` (
   `id` int(11) UNSIGNED NOT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` mediumtext COLLATE utf8mb4_unicode_ci,
-  `notes` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confirm_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` mediumtext COLLATE utf8mb4_unicode_ci,
-  `type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0',
-  `numb` int(11) DEFAULT '0'
+  `fullname` varchar(255) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `content` mediumtext DEFAULT NULL,
+  `notes` varchar(1024) DEFAULT NULL,
+  `confirm_status` varchar(255) DEFAULT NULL,
+  `address` mediumtext DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
@@ -4978,22 +4994,22 @@ CREATE TABLE `table_newsletter` (
 
 CREATE TABLE `table_news_cat` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5004,23 +5020,23 @@ CREATE TABLE `table_news_cat` (
 
 CREATE TABLE `table_news_item` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `id_cat` int(11) DEFAULT '0',
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_updated` int(11) DEFAULT '0',
-  `date_created` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `id_cat` int(11) DEFAULT 0,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_updated` int(11) DEFAULT 0,
+  `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5031,21 +5047,21 @@ CREATE TABLE `table_news_item` (
 
 CREATE TABLE `table_news_list` (
   `id` int(11) UNSIGNED NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5064,24 +5080,24 @@ INSERT INTO `table_news_list` (`id`, `slugvi`, `slugen`, `contenten`, `contentvi
 
 CREATE TABLE `table_news_sub` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `id_cat` int(11) DEFAULT '0',
-  `id_item` int(11) DEFAULT '0',
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_updated` int(11) DEFAULT '0',
-  `date_created` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `id_cat` int(11) DEFAULT 0,
+  `id_item` int(11) DEFAULT 0,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_updated` int(11) DEFAULT 0,
+  `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5092,8 +5108,8 @@ CREATE TABLE `table_news_sub` (
 
 CREATE TABLE `table_news_tags` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `id_tags` int(11) DEFAULT '0'
+  `id_parent` int(11) DEFAULT 0,
+  `id_tags` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -5104,32 +5120,25 @@ CREATE TABLE `table_news_tags` (
 
 CREATE TABLE `table_order` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_user` int(11) DEFAULT '0',
-  `code` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `order_payment` int(11) DEFAULT '0',
-  `temp_price` double DEFAULT '0',
-  `total_price` double DEFAULT '0',
-  `city` int(11) DEFAULT '0',
-  `district` int(11) DEFAULT '0',
-  `ward` int(11) DEFAULT '0',
-  `ship_price` double DEFAULT '0',
-  `requirements` mediumtext COLLATE utf8mb4_unicode_ci,
-  `notes` mediumtext COLLATE utf8mb4_unicode_ci,
-  `date_created` int(11) DEFAULT '0',
-  `order_status` int(11) DEFAULT '0',
-  `numb` int(11) DEFAULT '0'
+  `id_user` int(11) DEFAULT 0,
+  `code` varchar(25) DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `order_payment` int(11) DEFAULT 0,
+  `temp_price` double DEFAULT 0,
+  `total_price` double DEFAULT 0,
+  `city` int(11) DEFAULT 0,
+  `district` int(11) DEFAULT 0,
+  `ward` int(11) DEFAULT 0,
+  `ship_price` double DEFAULT 0,
+  `requirements` mediumtext DEFAULT NULL,
+  `notes` mediumtext DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `order_status` int(11) DEFAULT 0,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `table_order`
---
-
-INSERT INTO `table_order` (`id`, `id_user`, `code`, `fullname`, `phone`, `address`, `email`, `order_payment`, `temp_price`, `total_price`, `city`, `district`, `ward`, `ship_price`, `requirements`, `notes`, `date_created`, `order_status`, `numb`) VALUES
-(32, 0, 'QTQYJQ', 'Lưu Thành Công', '0988900981', 'IT test web, Không có mua, Xã Tân Hòa, Huyện Bình Gia, Tỉnh Lạng Sơn', 'tvcong@gmail.com', 9, 77777, 77777, 13, 136, 2317, 0, '123123123', '', 1673063260, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5139,25 +5148,17 @@ INSERT INTO `table_order` (`id`, `id_user`, `code`, `fullname`, `phone`, `addres
 
 CREATE TABLE `table_order_detail` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_order` int(11) DEFAULT '0',
-  `id_product` int(11) DEFAULT '0',
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `size` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `regular_price` double DEFAULT '0',
-  `sale_price` double DEFAULT '0',
-  `quantity` int(11) DEFAULT '0'
+  `id_order` int(11) DEFAULT 0,
+  `id_product` int(11) DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `size` varchar(255) DEFAULT NULL,
+  `regular_price` double DEFAULT 0,
+  `sale_price` double DEFAULT 0,
+  `quantity` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `table_order_detail`
---
-
-INSERT INTO `table_order_detail` (`id`, `id_order`, `id_product`, `photo`, `name`, `code`, `color`, `size`, `regular_price`, `sale_price`, `quantity`) VALUES
-(55, 32, 1, 'jpc1kzktrzrtpxgphryk-9520.png', 'Giày Slip On Ultraboost 20', 'QTQYJQ', 'Cam', 'S', 11111, 11111, 3),
-(56, 32, 1, 'jpc1kzktrzrtpxgphryk-9520.png', 'Giày Slip On Ultraboost 20', 'QTQYJQ', 'Cam', 'XL', 22222, 22222, 2);
 
 -- --------------------------------------------------------
 
@@ -5167,9 +5168,9 @@ INSERT INTO `table_order_detail` (`id`, `id_order`, `id_product`, `photo`, `name
 
 CREATE TABLE `table_order_status` (
   `id` int(11) NOT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `class_order` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `class_order` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5191,8 +5192,8 @@ INSERT INTO `table_order_status` (`id`, `namevi`, `nameen`, `class_order`) VALUE
 
 CREATE TABLE `table_permission` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_permission_group` int(11) DEFAULT '0',
-  `permission` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `id_permission_group` int(11) DEFAULT 0,
+  `permission` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5302,11 +5303,11 @@ INSERT INTO `table_permission` (`id`, `id_permission_group`, `permission`) VALUE
 
 CREATE TABLE `table_permission_group` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `name` varchar(255) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5325,22 +5326,22 @@ INSERT INTO `table_permission_group` (`id`, `name`, `numb`, `status`, `date_crea
 
 CREATE TABLE `table_photo` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` mediumtext COLLATE utf8mb4_unicode_ci,
-  `link_video` mediumtext COLLATE utf8mb4_unicode_ci,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `act` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `photo` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `link` mediumtext DEFAULT NULL,
+  `link_video` mediumtext DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `act` varchar(30) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5388,35 +5389,35 @@ INSERT INTO `table_photo` (`id`, `photo`, `contenten`, `contentvi`, `descen`, `d
 
 CREATE TABLE `table_product` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `id_item` int(11) DEFAULT '0',
-  `id_cat` int(11) DEFAULT '0',
-  `id_sub` int(11) DEFAULT '0',
-  `id_brand` int(11) DEFAULT '0',
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `regular_price` double DEFAULT '0',
-  `discount` double DEFAULT '0',
-  `sale_price` double DEFAULT '0',
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0',
-  `view` int(11) DEFAULT '0',
-  `size` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `color` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `xuatxu` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `id_list` int(11) DEFAULT 0,
+  `id_item` int(11) DEFAULT 0,
+  `id_cat` int(11) DEFAULT 0,
+  `id_sub` int(11) DEFAULT 0,
+  `id_brand` int(11) DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL,
+  `photo2` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `code` varchar(30) DEFAULT NULL,
+  `regular_price` double DEFAULT 0,
+  `discount` double DEFAULT 0,
+  `sale_price` double DEFAULT 0,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0,
+  `view` int(11) DEFAULT 0,
+  `size` text NOT NULL,
+  `color` text NOT NULL,
+  `xuatxu` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5424,14 +5425,14 @@ CREATE TABLE `table_product` (
 --
 
 INSERT INTO `table_product` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `id_brand`, `photo`, `photo2`, `options`, `slugvi`, `slugen`, `contenten`, `contentvi`, `descen`, `descvi`, `nameen`, `namevi`, `code`, `regular_price`, `discount`, `sale_price`, `numb`, `status`, `type`, `date_created`, `date_updated`, `view`, `size`, `color`, `xuatxu`) VALUES
-(1, 1, 1, 1, 1, 1, 'img01-3990.png', 'img4-8808.png', '{\"p\":\"phobike90re200-duke-wh-21-90resallaepiv2-5768.png\",\"w\":918,\"h\":629,\"m\":\"image\\/png\"}', '200-duke', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 20', 'New Balance 550 White Green', '200 DUKE', 350000, 29, 250000, 1, 'noibat,moi,banchay,hienthi', 'san-pham', 1609248457, 1675302268, 340, '', '', '39,40'),
+(1, 1, 1, 1, 1, 1, 'img01-3990.png', 'img4-8808.png', '{\"p\":\"img01-3990.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', '200-duke', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 20', 'New Balance 550 White Green', '200 DUKE', 350000, 29, 250000, 1, 'noibat,moi,banchay,hienthi', 'san-pham', 1609248457, 1675302268, 345, '', '', '39,40'),
 (2, 1, 1, 1, 1, 2, 'img02-9296.png', NULL, '{\"p\":\"phobike90re1290-sdgt-90resallaepiv1-4638.png\",\"w\":918,\"h\":629,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-21', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 21', 'Giày Slip On Ultraboost 21', 'SOUL-21', 450000, 33, 300000, 2, 'noibat,moi,banchay,hienthi', 'san-pham', 1609248594, 1675302082, 40, '', '', ''),
 (3, 1, 1, 1, 1, 3, 'img03-6721.png', NULL, '{\"p\":\"0fuvuozl9beslqjwjcje-1619.jpg\",\"w\":1600,\"h\":718,\"m\":\"image\\/jpeg\"}', 'giay-slip-on-ultraboost-22', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 22', 'Giày Slip On Ultraboost 22', 'SOUL-22', 250000, 40, 150000, 3, 'noibat,moi,banchay,hienthi', 'san-pham', 1609248686, 1675302089, 14, '', '', ''),
-(4, 1, 1, 1, 1, 4, 'img04-6039.png', NULL, '{\"p\":\"img04-6039.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-23', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 23', 'Giày Slip On Ultraboost 23', 'SOUL-23', 550000, 27, 400000, 4, 'noibat,moi,banchay,hienthi', 'san-pham', 1609248760, 1675302144, 9, '', '', ''),
-(5, 2, 2, 2, 2, 5, 'img05-3000.png', NULL, '{\"p\":\"img05-3000.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-24', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 24', 'Giày Slip On Ultraboost 24', 'SOUL-24', 150000, 40, 90000, 5, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249040, 1675302152, 4, '', '', ''),
-(6, 2, 2, 2, 2, 6, 'img01-9158.png', NULL, '{\"p\":\"poduct-3-9767-8087.jpg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'giay-slip-on-ultraboost-25', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 25', 'Giày Slip On Ultraboost 25', 'SOUL-25', 150000, 40, 90000, 6, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249099, 1675302158, 1, '', '', ''),
+(4, 1, 1, 1, 1, 4, 'img04-6039.png', NULL, '{\"p\":\"img04-6039.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-23', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 23', 'Giày Slip On Ultraboost 23', 'SOUL-23', 550000, 27, 400000, 4, 'noibat,moi,banchay,hienthi', 'san-pham', 1609248760, 1675302144, 13, '', '', ''),
+(5, 2, 2, 2, 2, 5, 'img05-3000.png', NULL, '{\"p\":\"img05-3000.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-24', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 24', 'Giày Slip On Ultraboost 24', 'SOUL-24', 150000, 40, 90000, 5, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249040, 1675302152, 9, '', '', ''),
+(6, 2, 2, 2, 2, 6, 'img01-9158.png', NULL, '{\"p\":\"img01-9158.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-25', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 25', 'Giày Slip On Ultraboost 25', 'SOUL-25', 150000, 40, 90000, 6, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249099, 1675302158, 6, '', '', ''),
 (7, 2, 2, 2, 2, 7, 'img03-3565.png', NULL, '{\"p\":\"jpc1kzktrzrtpxgphryk-7564.png\",\"w\":650,\"h\":490,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-26', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 26', 'Giày Slip On Ultraboost 26', 'SOUL-26', 300000, 67, 100000, 7, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249216, 1675302164, 1, '', '', ''),
-(8, 2, 2, 2, 2, 1, 'img04-5349.png', NULL, '{\"p\":\"poduct-9-3401-4091.jpg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'giay-slip-on-ultraboost-27', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 27', 'Giày Slip On Ultraboost 27', 'SOUL-27', 400000, 38, 250000, 8, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249283, 1675302170, 1, '', '', ''),
+(8, 2, 2, 2, 2, 1, 'img04-5349.png', NULL, '{\"p\":\"img04-5349.png\",\"w\":1024,\"h\":768,\"m\":\"image\\/png\"}', 'giay-slip-on-ultraboost-27', '', '&lt;p&gt;Dong Hai Men\'s Shoes - G0702 with Monkstrap design is a men\'s shoe that is loved by gentlemen because of its elegance and masculinity. Characteristic of Double Monkstrap, the G0702 has a unique design with a snap and two metal buckles across the upper part of the shoe. Made of high quality cowhide leather with moderate elasticity, suitable shape, and soft and soft shoe lining creating a comfortable feeling for men to use. Men\'s shoes G0702 has a luxurious but classic style that is suitable for office, meeting and party environments.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Product code: G0702&lt;/li&gt;\r\n	&lt;li&gt;Color: Yellow, Black&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Material: Cowhide&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '&lt;p&gt;Giày tây nam Đông Hải - G0702 với kiểu dáng Monkstrap là kiểu giày nam được quý ông yêu thích bởi sự lịch lãm, nam tính. Mang nét đặc trưng của Double Monkstrap, G0702 có thiết kế độc đáo với phần đóng mở bằng dây gài và 2 khóa kim loại vắt ngang qua phần thân giày. Được làm bằng chất liệu da bò cao cấp có độ co giãn vừa phải, form dáng phù hợp, cùng với lớp lót giày mềm mịn tạo cảm giác thoải mái, dễ chịu cho phái mạnh khi sử dụng. Giày tây nam G0702 mang phong cách sang trọng mà cổ điển phù hợp với môi trường công sở, hội họp và dự tiệc.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mã sản phẩm: G0702&lt;/li&gt;\r\n	&lt;li&gt;Màu: Vàng, Đen&lt;/li&gt;\r\n	&lt;li&gt;Size: 38 - 43&lt;/li&gt;\r\n	&lt;li&gt;Chất liệu: Da bò&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Hurry to the streets without much time? Get your feet in these adidas Superstar slip-on shoes and easily create an elegant style at the last minute.\r\nThe wireless design on the body of the shoe combines a sporty stretch belt that hugs the feet for a comfortable fit. Wherever you go, whether paired with trousers or short skirts, the shoes will help you stand out with a modern style.', 'Vội ra đường mà không có nhiều thời gian? Hãy xỏ chân vào đôi giày slip-on adidas Superstar này và dễ dàng tạo phong cách thanh lịch vào phút chót. \r\nThiết kế không dây trên thân giày kết hợp đai co giãn đậm chất thể thao ôm sát bàn chân cho độ vừa vặn thoải mái. Dù bạn đi đâu, dù phối với quần ống loe hay váy ngắn, đôi giày cũng sẽ giúp bạn nổi bật với phong cách hiện đại.', 'Slip On Ultraboost 27', 'Giày Slip On Ultraboost 27', 'SOUL-27', 400000, 38, 250000, 8, 'noibat,moi,banchay,hienthi', 'san-pham', 1609249283, 1675302170, 2, '', '', ''),
 (9, 0, 0, 0, 0, 0, 'blog-thumbnail-2-9986.png', NULL, '{\"p\":\"blog-thumbnail-2-9986.png\",\"w\":700,\"h\":500,\"m\":\"image\\/png\"}', 'hinh-anh-giay-nike-air-max', '', '', '', '', '', 'Nike Air Max shoe image', 'Hình ảnh giày Nike Air Max', '', 0, 0, 0, 1, 'hienthi', 'thu-vien-anh', 1609287629, 1675304256, 22, '', '', ''),
 (10, 0, 0, 0, 0, 0, 'a-2023-nike-dunk-color-storyblog-thumbnailen-7768.png', NULL, '{\"p\":\"poduct-1-1758-8192.jpeg\",\"w\":540,\"h\":540,\"m\":\"image\\/jpeg\"}', 'hinh-anh-giay-nike-zoom', '', '', '', '', '', 'Nike Zoom shoe image', 'Hình ảnh giày Nike Zoom', '', 0, 0, 0, 2, 'hienthi', 'thu-vien-anh', 1609287653, 1675304264, 3, '', '', ''),
 (11, 0, 0, 0, 0, 0, 'marvelblackpanthersanfordgreeneinterviewinternalbannersblog-thumb-8113.jpg', NULL, '', 'hinh-anh-giay-nike-air-force', '', '', '', '', '', 'Nike Air Force shoe image', 'Hình ảnh giày Nike Air Force', '', 0, 0, 0, 3, 'hienthi', 'thu-vien-anh', 1609287703, 1675304268, 0, '', '', ''),
@@ -5448,21 +5449,21 @@ INSERT INTO `table_product` (`id`, `id_list`, `id_item`, `id_cat`, `id_sub`, `id
 
 CREATE TABLE `table_product_brand` (
   `id` int(11) NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5486,22 +5487,22 @@ INSERT INTO `table_product_brand` (`id`, `slugvi`, `slugen`, `contenten`, `conte
 
 CREATE TABLE `table_product_cat` (
   `id` int(11) NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5520,23 +5521,23 @@ INSERT INTO `table_product_cat` (`id`, `id_list`, `slugvi`, `slugen`, `contenten
 
 CREATE TABLE `table_product_item` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `id_cat` int(11) DEFAULT '0',
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_updated` int(11) DEFAULT '0',
-  `date_created` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `id_cat` int(11) DEFAULT 0,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_updated` int(11) DEFAULT 0,
+  `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5555,21 +5556,21 @@ INSERT INTO `table_product_item` (`id`, `id_list`, `id_cat`, `slugvi`, `slugen`,
 
 CREATE TABLE `table_product_list` (
   `id` int(11) NOT NULL,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5588,9 +5589,9 @@ INSERT INTO `table_product_list` (`id`, `slugvi`, `slugen`, `contenten`, `conten
 
 CREATE TABLE `table_product_sale` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `id_color` int(11) DEFAULT '0',
-  `id_size` int(11) DEFAULT '0'
+  `id_parent` int(11) DEFAULT 0,
+  `id_color` int(11) DEFAULT 0,
+  `id_size` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5666,7 +5667,7 @@ CREATE TABLE `table_product_sale_color` (
   `id` int(11) NOT NULL,
   `id_parent` int(11) NOT NULL,
   `id_color` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_product_sale_color`
@@ -5705,7 +5706,7 @@ CREATE TABLE `table_product_sale_size` (
   `id` int(11) NOT NULL,
   `id_parent` int(11) NOT NULL,
   `id_size` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_product_sale_size`
@@ -5740,24 +5741,24 @@ INSERT INTO `table_product_sale_size` (`id`, `id_parent`, `id_size`) VALUES
 
 CREATE TABLE `table_product_sub` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_list` int(11) DEFAULT '0',
-  `id_cat` int(11) DEFAULT '0',
-  `id_item` int(11) DEFAULT '0',
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_updated` int(11) DEFAULT '0',
-  `date_created` int(11) DEFAULT '0'
+  `id_list` int(11) DEFAULT 0,
+  `id_cat` int(11) DEFAULT 0,
+  `id_item` int(11) DEFAULT 0,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `date_updated` int(11) DEFAULT 0,
+  `date_created` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5776,8 +5777,8 @@ INSERT INTO `table_product_sub` (`id`, `id_list`, `id_cat`, `id_item`, `slugvi`,
 
 CREATE TABLE `table_product_tags` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `id_tags` int(11) DEFAULT '0'
+  `id_parent` int(11) DEFAULT 0,
+  `id_tags` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5795,12 +5796,12 @@ INSERT INTO `table_product_tags` (`id`, `id_parent`, `id_tags`) VALUES
 
 CREATE TABLE `table_pushonesignal` (
   `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` mediumtext COLLATE utf8mb4_unicode_ci,
-  `date_created` int(11) DEFAULT '0',
-  `numb` int(11) DEFAULT '0'
+  `name` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5819,18 +5820,18 @@ INSERT INTO `table_pushonesignal` (`id`, `name`, `link`, `photo`, `description`,
 
 CREATE TABLE `table_seo` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_parent` int(11) DEFAULT '0',
-  `com` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `act` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `titlevi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `keywordsvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descriptionvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `titleen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `keywordsen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descriptionen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `schemavi` text COLLATE utf8mb4_unicode_ci,
-  `schemaen` text COLLATE utf8mb4_unicode_ci
+  `id_parent` int(11) DEFAULT 0,
+  `com` varchar(30) DEFAULT NULL,
+  `act` varchar(30) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `titlevi` mediumtext DEFAULT NULL,
+  `keywordsvi` mediumtext DEFAULT NULL,
+  `descriptionvi` mediumtext DEFAULT NULL,
+  `titleen` mediumtext DEFAULT NULL,
+  `keywordsen` mediumtext DEFAULT NULL,
+  `descriptionen` mediumtext DEFAULT NULL,
+  `schemavi` text DEFAULT NULL,
+  `schemaen` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -5886,15 +5887,15 @@ INSERT INTO `table_seo` (`id`, `id_parent`, `com`, `act`, `type`, `titlevi`, `ke
 
 CREATE TABLE `table_seopage` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `titlevi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `keywordsvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descriptionvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `titleen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `keywordsen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descriptionen` mediumtext COLLATE utf8mb4_unicode_ci
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `titlevi` mediumtext DEFAULT NULL,
+  `keywordsvi` mediumtext DEFAULT NULL,
+  `descriptionvi` mediumtext DEFAULT NULL,
+  `titleen` mediumtext DEFAULT NULL,
+  `keywordsen` mediumtext DEFAULT NULL,
+  `descriptionen` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -5917,13 +5918,13 @@ INSERT INTO `table_seopage` (`id`, `photo`, `options`, `type`, `titlevi`, `keywo
 
 CREATE TABLE `table_setting` (
   `id` int(11) NOT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `mastertool` mediumtext COLLATE utf8mb4_unicode_ci,
-  `headjs` mediumtext COLLATE utf8mb4_unicode_ci,
-  `bodyjs` mediumtext COLLATE utf8mb4_unicode_ci,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `analytics` mediumtext COLLATE utf8mb4_unicode_ci
+  `options` mediumtext DEFAULT NULL,
+  `mastertool` mediumtext DEFAULT NULL,
+  `headjs` mediumtext DEFAULT NULL,
+  `bodyjs` mediumtext DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `analytics` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5941,13 +5942,13 @@ INSERT INTO `table_setting` (`id`, `options`, `mastertool`, `headjs`, `bodyjs`, 
 
 CREATE TABLE `table_size` (
   `id` int(11) UNSIGNED NOT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `namevi` varchar(255) DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5968,22 +5969,22 @@ INSERT INTO `table_size` (`id`, `namevi`, `nameen`, `type`, `numb`, `status`, `d
 
 CREATE TABLE `table_static` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_attach` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `photo` varchar(255) DEFAULT NULL,
+  `photo2` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `file_attach` varchar(255) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -5991,7 +5992,6 @@ CREATE TABLE `table_static` (
 --
 
 INSERT INTO `table_static` (`id`, `photo`, `photo2`, `options`, `slugvi`, `slugen`, `contenten`, `contentvi`, `descen`, `descvi`, `nameen`, `namevi`, `file_attach`, `type`, `status`, `date_created`, `date_updated`) VALUES
-(1, 'blog-thumbnail-2-6793.png', '', '{\"p\":\"blog-thumbnail-2-6793.png\",\"w\":700,\"h\":500,\"m\":\"image\\/png\"}', 've-chung-toi', '', '&lt;p&gt;Nike has always led the market for creativity in its designs. Flyknit shoelace technology is a prime example.&lt;br /&gt;\r\nNike is the market leader in sportswear. This is thanks to Nike possessing a series of state-of-the-art sports technologies such as Dri-fit technology in clothing production, Air Max air cushioning technology. However, when it comes to Nike shoes, we can\'t help but mention Flyknit body technology.&lt;br /&gt;\r\nIntroducing Nike Flyknit technology&lt;br /&gt;\r\nFlyknit technology when introduced in 2012 (photo: sivasdescalzo.com)&lt;br /&gt;\r\nFlyknit is the result of years of research in Nike\'s innovation kitchen. This technology was officially introduced in 2012 at the London Olympics.&lt;br /&gt;\r\nFlyknit owns impressive specs. The entire shoe body is woven from flyknit yarn weighs only 34 grams, when combined with the sole, the total weight of the Flyknit Racer shoes is only 160 grams.&lt;br /&gt;\r\nThis means that athletes will wear shoes that are only half or two-third lighter than they used to be.&lt;br /&gt;\r\nThe essence of the Flynknit technology is the most resilient, monolithic elastomeric fabrics with the latest in digital weaving technology. There are no seams or seams on a sole.&lt;br /&gt;\r\nAs a result, Flyknit is not only light, but also very hugging and can be suitable for all sports such as soccer, jogging, basketball ... etc.&lt;br /&gt;\r\nFlyknit spreading&lt;/p&gt;\r\n', '&lt;p&gt;Nike luôn dẫn đầu thị trường về sự sáng tạo trong các thiết kế của mình. Công nghệ thân giày Flyknit là một ví dụ điển hình.&lt;/p&gt;\r\n\r\n&lt;p&gt;Nike là công ty dẫn đầu thị trường về đồ thể thao. Có được điều này là nhờ Nike sở hữu hàng loạt các công nghệ thể thao tiên tiến nhất  như &lt;a href=&quot;https://thethao247.vn/318-cong-nghe-dri-fit-cua-nike-co-gi-dac-biet-d176359.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;công nghệ Dri-fit&lt;/a&gt; trong sản xuất quần áo, &lt;a href=&quot;https://thethao247.vn/318-kham-pha-lich-su-phat-trien-cong-nghe-nike-air-max-d177454.html&quot; rel=&quot;dofollow&quot; target=&quot;_blank&quot;&gt;công nghệ đệm giày không khí Air Max&lt;/a&gt;. Tuy nhiên, nhắc tới giày Nike, chúng ta không thể không nhắc tới công nghệ thân giày Flyknit.&lt;/p&gt;\r\n\r\n&lt;p&gt;Giới thiệu về công nghệ Nike Flyknit&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/10/Nike-Flyknit.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/10/Nike-Flyknit.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/10/Nike-Flyknit.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/10/Nike-Flyknit.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/10/Nike-Flyknit.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;observed&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/10/Nike-Flyknit.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Công nghệ flyknit khi được giới thiệu vào năm 2012 (ảnh: sivasdescalzo.com)&lt;/p&gt;\r\n\r\n&lt;p&gt;Flyknit là kết quả của nhiều năm nghiên cứu tại innovation kitchen (bếp công nghệ) của Nike. Công nghệ này chính thức được giới thiệu vào ngăm 2012 tại Olympic London.&lt;/p&gt;\r\n\r\n&lt;p&gt;Flyknit sở hữu những thông số kỹ thuật cực kì ấn tượng. Toàn bộ phần thân giày được dệt từ sợi flyknit chỉ nặng có 34 gram, khi kết hợp với với phần đế, tổng trọng lượng của đôi giày Flyknit Racer cũng chỉ đến 160 gram.&lt;/p&gt;\r\n\r\n&lt;p&gt;Điều này đồng nghĩa với việc các vận động viên sẽ mang trên chân đôi giày chỉ nhẹ bằng một nửa hoặc hai phần ba so với trước đây.&lt;/p&gt;\r\n\r\n&lt;p&gt;Bản chất công nghệ Flynknit là những sợi vải đặc biệt có khả năng đàn hồi được dệt nguyên khối bằng công nghệ dệt kĩ thuật số hiện đại nhất. Không có bất kì một đường nối hoặc đường may nào trên một tấm thân giày.&lt;/p&gt;\r\n\r\n&lt;p&gt;Nhờ vậy, Flyknit không chỉ nhẹ mà còn rất ôm chân và có thể phù hợp với mọi môn thể thao như đá bóng, chạy bộ, bóng rổ...v..v&lt;/p&gt;\r\n\r\n&lt;p&gt;Sự lan tỏa của Flyknit&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;a data-at-1366=&quot;https://media.thethao247.vn/origin_1366x0/upload/thanhtung/2019/04/10/Nike-Flyknit-racer.jpg&quot; data-at-1920=&quot;https://media.thethao247.vn/origin_1920x0/upload/thanhtung/2019/04/10/Nike-Flyknit-racer.jpg&quot; data-at-450=&quot;https://media.thethao247.vn/origin_450x0/upload/thanhtung/2019/04/10/Nike-Flyknit-racer.jpg&quot; data-at-800=&quot;https://media.thethao247.vn/origin_800x0/upload/thanhtung/2019/04/10/Nike-Flyknit-racer.jpg&quot; data-caption=&quot;&quot; href=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/10/Nike-Flyknit-racer.jpg&quot;&gt;&lt;img alt=&quot;&quot; data-ll-status=&quot;loading&quot; src=&quot;https://media.thethao247.vn/origin_850x0/upload/thanhtung/2019/04/10/Nike-Flyknit-racer.jpg&quot; title=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Sự áp đảo tuyệt đối của sắc xanh từ những đôi Flyknit Racer tại Olympic London 2012&lt;/p&gt;\r\n\r\n&lt;p&gt;Tại sân khấu Olympic London, Nike đã được dịp phô diễn khả năng cải thiện hiệu suất với đôi giày Flyknit Racer của các vận động viên điền kinh.&lt;/p&gt;\r\n', 'Soon after, products that used Flyknit bodies were bought by athletes and casual users alike, leading to a sales boom.\r\nThe flyknit shoes, while very expensive, sell out quickly. This reinforces Nike\'s market leadership in sports.', 'Ngay sau đó, những sản phẩm sử dụng thân Flyknit được các vận động viên và cả những người dùng thông thường tìm mua liên tục dẫn đến một sự bùng nổ doanh số.\r\nNhững đôi giày flyknit mặc dù có giá rất cao nhưng đều bán hết nhanh chóng. Điều này giúp củng cố vị thế dẫn đầu thị trường thể thao của Nike.', 'About us', 'Về chúng tôi', '', 'gioi-thieu', 'hienthi', 1609288150, 1674879396),
 (2, '', NULL, '', 'giay-tot-nhat-cho-nhung-nguoi-tot-nhat', 'finest-footwear-for-finest-peoples', '', '', '', '', 'Finest footwear for finest peoples', 'Giày tốt nhất cho những người tốt nhất', '', 'slogan', 'hienthi', 1609288216, 1609308165),
 (3, '', NULL, '', '', '', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Tầng 3 số 102 Nguyễn Hoàng, Mỹ Đình 2, Hà Nội&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 hoặc 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '', '', '', '', '', 'lienhe', 'hienthi', 1609288283, 1620819925),
 (4, '', NULL, '', 'sneaker-shoes-vi', 'sneaker-shoes-en', '&lt;p&gt;Address: 3rd Floor, No. 102 Nguyen Hoang, My Dinh 2, Hanoi&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 or 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '&lt;p&gt;Địa chỉ: Tầng 3 số 102 Nguyễn Hoàng, Mỹ Đình 2, Hà Nội&lt;/p&gt;\r\n\r\n&lt;p&gt;Email: giayadidaschinhhang@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Hotline: 0966342792 hoặc 0966342709&lt;/p&gt;\r\n\r\n&lt;p&gt;Website: http://google.com&lt;/p&gt;\r\n', '', '', 'Sneaker Shoes EN', 'Sneaker Shoes VI', '', 'footer', 'hienthi', 1609288313, 1609308173);
@@ -6004,21 +6004,21 @@ INSERT INTO `table_static` (`id`, `photo`, `photo2`, `options`, `slugvi`, `sluge
 
 CREATE TABLE `table_tags` (
   `id` int(11) UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `options` mediumtext COLLATE utf8mb4_unicode_ci,
-  `slugvi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slugen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contenten` mediumtext COLLATE utf8mb4_unicode_ci,
-  `contentvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descen` mediumtext COLLATE utf8mb4_unicode_ci,
-  `descvi` mediumtext COLLATE utf8mb4_unicode_ci,
-  `nameen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `namevi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_created` int(11) DEFAULT '0',
-  `date_updated` int(11) DEFAULT '0'
+  `photo` varchar(255) DEFAULT NULL,
+  `options` mediumtext DEFAULT NULL,
+  `slugvi` varchar(255) DEFAULT NULL,
+  `slugen` varchar(255) DEFAULT NULL,
+  `contenten` mediumtext DEFAULT NULL,
+  `contentvi` mediumtext DEFAULT NULL,
+  `descen` mediumtext DEFAULT NULL,
+  `descvi` mediumtext DEFAULT NULL,
+  `nameen` varchar(255) DEFAULT NULL,
+  `namevi` varchar(255) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `type` varchar(30) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `date_created` int(11) DEFAULT 0,
+  `date_updated` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -6029,24 +6029,24 @@ CREATE TABLE `table_tags` (
 
 CREATE TABLE `table_user` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_permission` int(11) DEFAULT '0',
-  `username` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `confirm_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fullname` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gender` tinyint(1) DEFAULT '0',
-  `login_session` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lastlogin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `role` tinyint(1) DEFAULT '1',
-  `secret_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `birthday` int(11) DEFAULT '0',
-  `numb` int(11) DEFAULT '0'
+  `id_permission` int(11) DEFAULT 0,
+  `username` varchar(225) DEFAULT NULL,
+  `password` varchar(225) DEFAULT NULL,
+  `confirm_code` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `fullname` varchar(225) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(225) DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT 0,
+  `login_session` varchar(255) DEFAULT NULL,
+  `user_token` varchar(255) DEFAULT NULL,
+  `lastlogin` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `role` tinyint(1) DEFAULT 1,
+  `secret_key` varchar(255) DEFAULT NULL,
+  `birthday` int(11) DEFAULT 0,
+  `numb` int(11) DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6054,7 +6054,7 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confirm_code`, `avatar`, `fullname`, `phone`, `email`, `address`, `gender`, `login_session`, `user_token`, `lastlogin`, `status`, `role`, `secret_key`, `birthday`, `numb`) VALUES
-(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '21b5e39444703e21a12741f051a8466e', '1675330460', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
+(1, 0, 'admin', '79709a28906d1f7a08a0d067896ea1d5', '', '', 'Administrator', '0939513667', 'admin@gmail.com', '222 huỳnh thị na', 1, 'cdd5129f3ac2a705131260a4ab12a285', '3b8b75452f11ec70f8f085d98eccc436', '1675411378', 'hienthi', 3, 'cdd5129f3ac2a705131260a4ab12a285', 1608051600, 0);
 
 -- --------------------------------------------------------
 
@@ -6064,7 +6064,7 @@ INSERT INTO `table_user` (`id`, `id_permission`, `username`, `password`, `confir
 
 CREATE TABLE `table_user_limit` (
   `id` int(11) NOT NULL,
-  `login_ip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `login_ip` varchar(50) NOT NULL,
   `login_attempts` int(11) NOT NULL,
   `attempt_time` int(11) NOT NULL,
   `locked_time` int(11) NOT NULL
@@ -6085,10 +6085,10 @@ INSERT INTO `table_user_limit` (`id`, `login_ip`, `login_attempts`, `attempt_tim
 
 CREATE TABLE `table_user_log` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_user` int(11) DEFAULT '0',
-  `ip` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT '0.0.0.0',
-  `timelog` int(11) DEFAULT '0',
-  `user_agent` mediumtext COLLATE utf8mb4_unicode_ci
+  `id_user` int(11) DEFAULT 0,
+  `ip` varchar(16) DEFAULT '0.0.0.0',
+  `timelog` int(11) DEFAULT 0,
+  `user_agent` mediumtext DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6224,7 +6224,10 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 (126, 1, '::1', 1675157064, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'),
 (127, 1, '::1', 1675246300, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'),
 (128, 1, '::1', 1675300587, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'),
-(129, 1, '::1', 1675330313, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36');
+(129, 1, '::1', 1675330313, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'),
+(130, 1, '::1', 1675389782, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'),
+(131, 1, '::1', 1675404647, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'),
+(132, 1, '::1', 1675410976, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -6233,9 +6236,9 @@ INSERT INTO `table_user_log` (`id`, `id_user`, `ip`, `timelog`, `user_agent`) VA
 --
 
 CREATE TABLE `table_user_online` (
-  `session` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `time` int(11) DEFAULT '0',
-  `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `session` char(100) DEFAULT NULL,
+  `time` int(11) DEFAULT 0,
+  `ip` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -6243,7 +6246,7 @@ CREATE TABLE `table_user_online` (
 --
 
 INSERT INTO `table_user_online` (`session`, `time`, `ip`) VALUES
-('6cuc3btbdgoi065cad7sqhsdk0', 1675330540, '::1');
+('aul71kc556pd9bqromaeums7fn', 1675411369, '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -6256,7 +6259,7 @@ CREATE TABLE `table_variants` (
   `id_parent` int(11) NOT NULL,
   `color` int(11) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_variants`
@@ -6280,7 +6283,7 @@ CREATE TABLE `table_variants1` (
   `size` int(11) NOT NULL,
   `price_new` double NOT NULL,
   `price_old` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `table_variants1`
@@ -6298,16 +6301,16 @@ INSERT INTO `table_variants1` (`id`, `id_parent`, `size`, `price_new`, `price_ol
 
 CREATE TABLE `table_ward` (
   `id` int(11) UNSIGNED NOT NULL,
-  `id_city` int(11) DEFAULT '0',
-  `id_district` int(11) DEFAULT '0',
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `level` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `numb` int(11) DEFAULT '0',
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_updated` int(11) DEFAULT '0',
-  `date_created` int(11) DEFAULT '0',
+  `id_city` int(11) DEFAULT 0,
+  `id_district` int(11) DEFAULT 0,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `code` varchar(5) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
+  `numb` int(11) DEFAULT 0,
+  `status` varchar(255) DEFAULT NULL,
+  `date_updated` int(11) DEFAULT 0,
+  `date_created` int(11) DEFAULT 0,
   `ship_price` double DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -17278,7 +17281,7 @@ ALTER TABLE `table_contact`
 -- AUTO_INCREMENT for table `table_counter`
 --
 ALTER TABLE `table_counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10344;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10360;
 
 --
 -- AUTO_INCREMENT for table `table_coupon`
@@ -17362,13 +17365,13 @@ ALTER TABLE `table_news_tags`
 -- AUTO_INCREMENT for table `table_order`
 --
 ALTER TABLE `table_order`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `table_order_detail`
 --
 ALTER TABLE `table_order_detail`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `table_order_status`
@@ -17512,7 +17515,7 @@ ALTER TABLE `table_user_limit`
 -- AUTO_INCREMENT for table `table_user_log`
 --
 ALTER TABLE `table_user_log`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `table_variants`

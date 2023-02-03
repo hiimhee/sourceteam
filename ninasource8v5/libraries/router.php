@@ -218,6 +218,7 @@ switch ($com) {
         break;
 
     case 'yeu-thich':
+        if(!LIKESITE) $func->redirect('index.php');
         $source = "product";
         $template = isset($_GET['id']) ? "product/product_detail" : "product/product";
         $seo->set('type', isset($_GET['id']) ? "article" : "object");
@@ -275,6 +276,7 @@ switch ($com) {
         break;
 
     case 'gio-hang':
+        if(!CARTSITE) $func->redirect($configBase);
         $source = "order";
         $template = 'order/order';
         $titleMain = giohang;

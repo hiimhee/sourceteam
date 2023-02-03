@@ -8,7 +8,7 @@ $config['news'][$nametype]['tags'] = false;
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['copy'] = true;
 $config['news'][$nametype]['copy_image'] = true;
-$config['news'][$nametype]['comment'] = true;
+$config['news'][$nametype]['comment'] = false;
 $config['news'][$nametype]['chucvu'] = false;
 $config['news'][$nametype]['slug'] = true;
 $config['news'][$nametype]['check'] = array("noibat" => "Nổi bật", "hienthi" => "Hiển thị");

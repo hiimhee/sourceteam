@@ -1,6 +1,6 @@
 <?php
 
-// phpinfo();
+// phpinfo(); # Updated PHP 8.2.25
 
 if (!defined('LIBRARIES')) die("Error");
 
@@ -17,11 +17,17 @@ define('COPYSITE', true);
 /* Cấu hình giỏ hàng */
 define('CARTSITE', false);
 
+/* Cấu hình thanh toán online */
+define('PAYMENTSITE', false);
+
 /* Cấu hình lọc sản phẩm */
 define('FILERSITE', false);
 
 /* Cấu hình giỏ hàng nâng cao */
 define('CARTPROSITE', false);
+
+/* Cấu hình yêu thích */
+define('LIKESITE', false);
 
 /* Cấu hình chung */
 $config = array(
@@ -48,9 +54,9 @@ $config = array(
         'secret' => '$nina@',
         'salt' => 'swKJjeS!t',
         'debug-developer' => true,
-        'debug-css' => false, // Compress CSS
-        'debug-js' => false, // Compress Js
-        'debug-html' => false, // Compress HTML
+        'debug-css' => true, // Compress CSS
+        'debug-js' => true, // Compress Js
+        'debug-html' => true, // Compress HTML
         'index' => false,
         'image' => array(
             'hasWebp' => false,
@@ -82,15 +88,7 @@ $config = array(
             'vi' => 'Tiếng Việt',
             // 'en' => 'Tiếng Anh'
         ),
-        'comlang' => array(
-            "gioi-thieu" => array("vi" => "gioi-thieu", "en" => "about-us"),
-            "san-pham" => array("vi" => "san-pham", "en" => "product"),
-            "tin-tuc" => array("vi" => "tin-tuc", "en" => "news"),
-            "tuyen-dung" => array("vi" => "tuyen-dung", "en" => "recruitment"),
-            "thu-vien-anh" => array("vi" => "thu-vien-anh", "en" => "gallery"),
-            "video" => array("vi" => "video", "en" => "video"),
-            "lien-he" => array("vi" => "lien-he", "en" => "contact")
-        )
+        'comlang' => array()
     ),
     'order' => array(
         'ship' => false
