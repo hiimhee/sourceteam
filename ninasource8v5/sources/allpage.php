@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('SOURCES')) die("Error");
 
 /* Query allpage */
@@ -7,7 +8,7 @@ $favicon = $cache->get("select photo from #_photo where type = ? and act = ? and
 
 $logo = $cache->get("select id, photo, options from #_photo where type = ? and act = ? limit 0,1", array('logo', 'photo_static'), 'fetch', 7200);
 
-$banner = $cache->get("select photo from #_photo where type = ? and act = ? limit 0,1", array('banner', 'photo_static'), 'fetch', 7200);
+$banner = $cache->get("select photo from #_photo where type = ? and act = ? limit 0,1", array('banner', 'photo_static'), 'fetch', 7200); 
 
 $slogan = $cache->get("select name$lang from #_static where type = ? limit 0,1", array('slogan'), 'fetch', 7200);
 

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 define('LIBRARIES', './libraries/');
 define('SOURCES', './sources/');
