@@ -192,6 +192,9 @@ $linkWord = "index.php?com=wordAll";
                                         if($items[$i]['order_payment'] == 1001) {
                                             $order_payment['namevi'] = 'Thanh toán Momo';
                                         }
+                                        if($items[$i]['order_payment'] == 1002) {
+                                            $order_payment['namevi'] = 'Thanh toán 9Pay';
+                                        }
                                     ?>
                                     <span class="text-info"><?= $order_payment['namevi'] ?></span>
                                 </td>

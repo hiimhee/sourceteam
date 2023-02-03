@@ -240,6 +240,10 @@ if (!empty($_POST['thanhtoan'])) {
         $_SESSION['ALEPAY'] = $data_donhang;
         $func->redirect('sources/paymentAPI/momo/index.php'); exit;
     }
+    if($dataOrder['payments'] == '9pay') {
+        $_SESSION['ALEPAY'] = $data_donhang;
+        $func->redirect('sources/paymentAPI/9pay/index.php'); exit;
+    }
     
     $id_insert = $d->insert('order', $data_donhang);
 

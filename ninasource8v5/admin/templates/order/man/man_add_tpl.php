@@ -33,11 +33,18 @@ $linkSave = "index.php?com=order&act=save";
                 </div>
                 <div class="form-group col-md-4 col-sm-6">
                     <label>Hình thức thanh toán:</label>
-                    <?php $order_payment = $func->getInfoDetail('namevi', 'news', @$item['order_payment']); if($item['order_payment'] == 1000) {
-                                            $order_payment['namevi'] = 'Thanh toán Alepay';
-                                        } if($item['order_payment'] == 1001) {
-                                            $order_payment['namevi'] = 'Thanh toán Momo';
-                                        } ?>
+                    <?php
+                        $order_payment = $func->getInfoDetail('namevi', 'news', @$item['order_payment']);
+                        if($item['order_payment'] == 1000) {
+                            $order_payment['namevi'] = 'Thanh toán Alepay';
+                        }
+                        if($item['order_payment'] == 1001) {
+                            $order_payment['namevi'] = 'Thanh toán Momo';
+                        }
+                        if($item['order_payment'] == 1002) {
+                            $order_payment['namevi'] = 'Thanh toán 9Pay';
+                        }
+                    ?>
                     <p class="text-info"><?= $order_payment['namevi'] ?></p>
                 </div>
                 <div class="form-group col-md-4 col-sm-6">

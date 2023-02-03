@@ -165,6 +165,13 @@
                                     <b>Momo</b> là một hệ thống thanh toán trực tuyến cho phép thực hiện các giao dịch thanh toán trực tuyến một cách đơn giản, nhanh chóng và an toàn khi sử dụng ứng dụng <b>Momo</b>.
                                 </div>
                             </div>
+                            <div class="payments-cart custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="payments-9pay" name="dataOrder[payments]" value="9pay" <?= (!empty($flashPayment) && $flashPayment == '9pay') ? 'checked' : '' ?> required>
+                                <label class="payments-label custom-control-label" for="payments-9pay" data-payments="9pay">Thanh toán qua cổng 9Pay<img src="assets/images/9Pay_Logo.png" /></label>
+                                <div class="payments-info payments-info-9pay transition">
+                                    <b>9Pay</b> là một hệ thống thanh toán trực tuyến cho phép thực hiện các giao dịch thanh toán trực tuyến một cách đơn giản, nhanh chóng và an toàn khi sử dụng ứng dụng <b>9Pay</b>.
+                                </div>
+                            </div>
                             <?php } ?>
                         </div>
                         <p class="title-cart"><?= thongtingiaohang ?>:</p>
