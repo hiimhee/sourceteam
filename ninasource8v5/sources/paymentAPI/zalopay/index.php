@@ -1,53 +1,44 @@
-<?php 
+<?php
+  session_start();
+  @define ( 'LIBRARIES' , '../../../libraries/');
+  require_once LIBRARIES . "config.php";
+  require_once LIBRARIES . "config-type.php";
+  require_once LIBRARIES . 'autoload.php';
+  new AutoLoad();
+  $injection = new AntiSQLInjection();
+  $d = new PDODb($config['database']);
+  $flash = new Flash();
+  $seo = new Seo($d);
+  $emailer = new Email($d);
+  $router = new AltoRouter();
+  $cache = new Cache($d);
+  $func = new Functions($d, $cache);
+  $breadcr = new BreadCrumbs($d);
+  $statistic = new Statistic($d, $cache);
+  $cart = new Cart($d);
+  $detect = new MobileDetect();
+  $addons = new AddonsOnline();
+  $css = new CssMinify($config['website']['debug-css'], $func);
+  $js = new JsMinify($config['website']['debug-js'], $func);
+  $data_donhang = $_SESSION['ALEPAY'];
   require "zalopay/helper.php";
   require "repository/order_repository.php";
-  $is_post_method = $_SERVER['REQUEST_METHOD'] === 'POST';
   $order = NULL;
   $error = NULL;
-  if ($is_post_method) {
-    $amount = (int)$_POST["amount"];
+  $dataZaloPay['description'] = 'Thanh toan don hang qua cong ZaloPay. Ma hoa don ' . $data_donhang['code'] . ' tri gia ' . $data_donhang['total_price'] . 'VND';
+  $dataZaloPay['amount'] = $data_donhang['total_price'];
+  if ($dataZaloPay) {
+    $amount = (int)$dataZaloPay['amount'];
     if ($amount < 1000) {
-      $error = "Số tiền không hợp lệ";
+      $func->transfer_api('Số tiền không hợp lệ', $configBase . 'gio-hang', false);
     } else {
-      $orderData = ZaloPayHelper::newCreateOrderData($_POST);
+      $orderData = ZaloPayHelper::newCreateOrderData($dataZaloPay);
       $order = ZaloPayHelper::createOrder($orderData);
       if ($order["returncode"] === 1) {
-        OrderRepository::add($orderData);
+        return header('Location: ' . $order["orderurl"]);
+        exit();
       } else {
-        $error = "Tạo đơn hàng thất bại";
+        $func->transfer_api('Tạo đơn hàng thất bại', $configBase . 'gio-hang', false);
       }
     }
   }
-?>
-<?php if (isset($error)) { ?>
-  <script>
-    alert('<?php echo $error; ?>');
-  </script>
-<?php } ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php include "components/head.php"; ?>
-<body>
-  <?php include "components/navbar.php"; ?>
-  <h3 class="text-center text-primary my-4 font-weight-bold">QRCode / Mobile Web to App</h3>
-  <form class="container mt-5" action="." method="POST">
-    <?php if (isset($order)) { ?>
-      <?php if ($order["returncode"] === 1) { ?>
-        <script>
-          window.open('<?php echo $order["orderurl"] ?>')
-        </script>
-      <?php } ?>
-    <?php } ?>
-    <div class="form-group">
-      <label for="description">Mô tả</label>
-      <textarea type="text" class="form-control" name="description" placeholder="Nhập mô tả"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Số tiền <span class="text-danger">*</span></label>
-      <input type="number" class="form-control" name="amount" placeholder="Nhập số tiền" value="1000">
-      <small class="form-text text-muted">Số tiền tối thiểu là 1000 VNĐ</small>
-    </div>
-    <button type="submit" class="btn btn-primary">Thanh toán</button>
-  </form>
-</body>
-</html>
