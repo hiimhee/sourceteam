@@ -15,10 +15,10 @@ define('NN_AUTHOR', 'NINA_DEVELOPER');
 define('COPYSITE', true);
 
 /* Cấu hình giỏ hàng */
-define('CARTSITE', true);
+define('CARTSITE', false);
 
 /* Cấu hình thanh toán online */
-define('PAYMENTSITE', true);
+define('PAYMENTSITE', false);
 
 /* Cấu hình lọc sản phẩm */
 define('FILERSITE', false);

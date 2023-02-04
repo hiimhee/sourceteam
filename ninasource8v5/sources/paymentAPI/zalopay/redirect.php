@@ -213,3 +213,6 @@ if ($isValidRedirect) {
   }
   exit;
 }
+else {
+      $func->transfer_api('Thanh toán không thành công. Vui lòng thử lại sau ít phút.', $configBase, false);
+  }
