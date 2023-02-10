@@ -117,7 +117,7 @@ if ($id != '') {
     else $seo->set('title', $rowDetail['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($rowDetail['options'])) ? json_decode($rowDetail['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $rowDetail['photo'])) {
         $imgJson = $func->getImgSize($rowDetail['photo'], UPLOAD_PRODUCT_L . $rowDetail['photo']);
@@ -148,7 +148,7 @@ if ($id != '') {
     else $seo->set('title', $productList['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($productList['options'])) ? json_decode($productList['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $productList['photo'])) {
         $imgJson = $func->getImgSize($productList['photo'], UPLOAD_PRODUCT_L . $productList['photo']);
@@ -207,7 +207,7 @@ if ($id != '') {
     else $seo->set('title', $productCat['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($productCat['options'])) ? json_decode($productCat['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $productCat['photo'])) {
         $imgJson = $func->getImgSize($productCat['photo'], UPLOAD_PRODUCT_L . $productCat['photo']);
@@ -254,7 +254,7 @@ if ($id != '') {
     else $seo->set('title', $productItem['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($productItem['options'])) ? json_decode($productItem['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $productItem['photo'])) {
         $imgJson = $func->getImgSize($productItem['photo'], UPLOAD_PRODUCT_L . $productItem['photo']);
@@ -304,7 +304,7 @@ if ($id != '') {
     else $seo->set('title', $productSub['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($productSub['options'])) ? json_decode($productSub['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $productSub['photo'])) {
         $imgJson = $func->getImgSize($productSub['photo'], UPLOAD_PRODUCT_L . $productSub['photo']);
@@ -334,7 +334,7 @@ if ($id != '') {
     else $seo->set('title', $productBrand['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($productBrand['options'])) ? json_decode($productBrand['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $productBrand['photo'])) {
         $imgJson = $func->getImgSize($productBrand['photo'], UPLOAD_PRODUCT_L . $productBrand['photo']);
@@ -372,7 +372,7 @@ if ($id != '') {
     else $seo->set('title', $titleMain);
     if (!empty($seopage['keywords' . $seolang])) $seo->set('keywords', $seopage['keywords' . $seolang]);
     if (!empty($seopage['description' . $seolang])) $seo->set('description', $seopage['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($seopage['options'])) ? json_decode($seopage['options'], true) : null;
     if (!empty($seopage['photo'])) {
         if (empty($imgJson) || ($imgJson['p'] != $seopage['photo'])) {

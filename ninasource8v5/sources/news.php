@@ -53,7 +53,7 @@ if ($id != '') {
     else $seo->set('title', $rowDetail['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($rowDetail['options'])) ? json_decode($rowDetail['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $rowDetail['photo'])) {
         $imgJson = $func->getImgSize($rowDetail['photo'], UPLOAD_NEWS_L . $rowDetail['photo']);
@@ -86,7 +86,7 @@ if ($id != '') {
     else $seo->set('title', $newsList['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($newsList['options'])) ? json_decode($newsList['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $newsList['photo'])) {
         $imgJson = $func->getImgSize($newsList['photo'], UPLOAD_NEWS_L . $newsList['photo']);
@@ -152,7 +152,7 @@ if ($id != '') {
     else $seo->set('title', $newsCat['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($newsCat['options'])) ? json_decode($newsCat['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $newsCat['photo'])) {
         $imgJson = $func->getImgSize($newsCat['photo'], UPLOAD_NEWS_L . $newsCat['photo']);
@@ -205,7 +205,7 @@ if ($id != '') {
     else $seo->set('title', $newsItem['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($newsItem['options'])) ? json_decode($newsItem['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $newsItem['photo'])) {
         $imgJson = $func->getImgSize($newsItem['photo'], UPLOAD_NEWS_L . $newsItem['photo']);
@@ -262,7 +262,7 @@ if ($id != '') {
     else $seo->set('title', $newsSub['name' . $lang]);
     if (!empty($seoDB['keywords' . $seolang])) $seo->set('keywords', $seoDB['keywords' . $seolang]);
     if (!empty($seoDB['description' . $seolang])) $seo->set('description', $seoDB['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($newsSub['options'])) ? json_decode($newsSub['options'], true) : null;
     if (empty($imgJson) || ($imgJson['p'] != $newsSub['photo'])) {
         $imgJson = $func->getImgSize($newsSub['photo'], UPLOAD_NEWS_L . $newsSub['photo']);
@@ -290,7 +290,7 @@ if ($id != '') {
     else $seo->set('title', $titleMain);
     if (!empty($seopage['keywords' . $seolang])) $seo->set('keywords', $seopage['keywords' . $seolang]);
     if (!empty($seopage['description' . $seolang])) $seo->set('description', $seopage['description' . $seolang]);
-    $seo->set('url', $func->getPageURL());
+    $seo->set('url', $func->getCurrentPageURL());
     $imgJson = (!empty($seopage['options'])) ? json_decode($seopage['options'], true) : null;
     if (!empty($seopage['photo'])) {
         if (empty($imgJson) || ($imgJson['p'] != $seopage['photo'])) {
