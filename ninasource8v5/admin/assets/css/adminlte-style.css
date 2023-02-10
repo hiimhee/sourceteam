@@ -247,7 +247,7 @@ select.form-control option:disabled{color:#b8babb;font-style:italic}
 .pagination{flex-wrap:wrap}
 .upload-file-image{border:1px solid #ebebeb;padding:0.5rem;position:relative;overflow:hidden}
 .upload-file-image img{width:auto;height:auto!important;margin:0 auto;display:block;max-width:100%;}
-a.upload-file-image-remove,.delete_1hinh{display:flex;justify-content:center;align-items:center;background:#bd2130 linear-gradient(180deg,#c7424f,#bd2130) repeat-x!important;border-radius:3px;color:#fff!important;width:2rem;height:2rem;padding:0.4rem;position:absolute;top:0.5rem;right:0.5rem;z-index:2}
+a.upload-file-image-remove,.delete_1hinh{display:flex;justify-content:center;align-items:center;background:#1c1f22!important;border-radius:3px;color:#fff!important;width:2rem;height:2rem;padding:0.4rem;position:absolute;top:0.5rem;right:0.5rem;z-index:2}
 a.upload-file-image-remove:hover,.delete_1hinh:hover{background:#111}
 @media(max-width:1201px){
 	.watermark-position{max-width:300px;height:300px}

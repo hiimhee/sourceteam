@@ -39,7 +39,7 @@ $config['product'][$nametype]['gallery'] = array(
         "img_type_photo" => '.jpg|.gif|.png|.jpeg|.gif'
     ),
 );
-$config['product'][$nametype]['code'] = true;
+$config['product'][$nametype]['code'] = false;
 $config['product'][$nametype]['regular_price'] = true;
 $config['product'][$nametype]['sale_price'] = true;
 $config['product'][$nametype]['discount'] = true;
@@ -130,8 +130,6 @@ $config['product'][$nametype]['width'] = 270;
 $config['product'][$nametype]['height'] = 270;
 $config['product'][$nametype]['thumb'] = '100x100x1';
 $config['product'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
-
-
 
 /* Sản phẩm */
 /*$nametype = "san-pham";
