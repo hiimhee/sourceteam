@@ -9,7 +9,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 /* Cấu hình coder */
 define('NN_CONTRACT', 'MSHD');
-define('NN_AUTHOR', 'NINA_DEVELOPER');
+define('NN_AUTHOR', 'MSHD');
 
 /* Cấu hình bản quyền sao chép */
 define('COPYSITE', true);
@@ -32,8 +32,8 @@ define('LIKESITE', false);
 /* Cấu hình chung */
 $config = array(
     'author' => array(
-        'name' => 'Phương Phạm',
-        'email' => 'phuongpham0603.nina@gmail.com',
+        'name' => '',
+        'email' => '',
         'timefinish' => '01/01/2023'
     ),
     'arrayDomainSSL' => array(),
