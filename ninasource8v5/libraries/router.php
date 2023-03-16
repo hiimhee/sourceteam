@@ -1,18 +1,13 @@
 <?php
-
 /* Check HTTP */
 $func->checkHTTP($http, $config['arrayDomainSSL'], $configBase, $configUrl);
-
 /* Validate URL */
 $func->checkUrl($config['website']['index']);
-
 /* Check login */
 $func->checkLoginMember();
-
 /* Mobile detect */
 $deviceType = ($detect->isMobile() || $detect->isTablet()) ? 'mobile' : 'computer';
 define('TEMPLATE', ($deviceType == 'computer') ? './templates/' : './templates/');
-
 /* Router */
 $router->setBasePath($config['database']['url']);
 $router->map('GET', ADMIN . '/', function () {
@@ -31,10 +26,7 @@ $router->map('GET|POST', 'sitemap.xml', 'sitemap', 'sitemap');
 $router->map('GET|POST', '[a:com]', 'allpage', 'show');
 $router->map('GET|POST', '[a:com]/[a:lang]/', 'allpagelang', 'lang');
 $router->map('GET|POST', '[a:com]/[a:action]', 'account', 'account');
-
-
 # Enable extension=php_gd.dll in php.ini to resize images
-
 $router->map('GET', THUMBS . '/[i:w]x[i:h]x[i:z]/[**:src]', function ($w, $h, $z, $src) {
     global $func;
     $func->createThumb($w, $h, $z, $src, null, THUMBS);
@@ -49,10 +41,8 @@ $router->map('GET', WATERMARK . '/news/[i:w]x[i:h]x[i:z]/[**:src]', function ($w
     $wtm = $cache->get("select status, photo, options from #_photo where type = ? and act = ? limit 0,1", array('watermark-news', 'photo_static'), 'fetch', 7200);
     $func->createThumb($w, $h, $z, $src, $wtm, "news");
 }, 'watermarkNews');
-
 /* Router match */
 $match = $router->match();
-
 /* Router check */
 if (is_array($match)) {
     if (is_callable($match['target'])) {
@@ -66,34 +56,26 @@ if (is_array($match)) {
     include("404.php");
     exit;
 }
-
 /* Setting */
 $sqlCache = "select * from #_setting";
 $setting = $cache->get($sqlCache, null, 'fetch', 7200);
 $optsetting = (!empty($setting['options'])) ? json_decode($setting['options'], true) : null;
-
 /* Lang */
 if (!empty($match['params']['lang'])) $_SESSION['lang'] = $match['params']['lang'];
 else if (empty($_SESSION['lang']) && empty($match['params']['lang'])) $_SESSION['lang'] = $optsetting['lang_default'];
 $lang = $_SESSION['lang'];
-
 /* Check lang */
 $weblang = (!empty($config['website']['lang'])) ? array_keys($config['website']['lang']) : array();
-
 if (!in_array($lang, $weblang)) {
     $_SESSION['lang'] = 'vi';
     $lang = $_SESSION['lang'];
 }
-
 /* Slug lang */
 $sluglang = 'slugvi';
-
 /* SEO Lang */
 $seolang = "vi";
-
 /* Require datas lang */
 require_once LIBRARIES . "lang/$lang.php";
-
 /* Tối ưu link */
 $requick = array(
     /* Sản phẩm */
@@ -103,35 +85,27 @@ $requick = array(
     array("tbl" => "product_sub", "field" => "ids", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
     array("tbl" => "product_brand", "field" => "idb", "source" => "product", "com" => "thuong-hieu", "type" => "san-pham"),
     array("tbl" => "product", "field" => "id", "source" => "product", "com" => "san-pham", "type" => "san-pham", "menu" => true),
-
     /* Tags */
     array("tbl" => "tags", "tbltag" => "product", "field" => "id", "source" => "tags", "com" => "tags-san-pham", "type" => "san-pham", "menu" => true),
     array("tbl" => "tags", "tbltag" => "news", "field" => "id", "source" => "tags", "com" => "tags-tin-tuc", "type" => "tin-tuc", "menu" => true),
-
     /* Thư viện ảnh */
     array("tbl" => "product", "field" => "id", "source" => "product", "com" => "thu-vien-anh", "type" => "thu-vien-anh", "menu" => true),
-
     /* Video */
     array("tbl" => "photo", "field" => "id", "source" => "video", "com" => "video", "type" => "video", "menu" => true),
-
     /* Tin tức */
     array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
     array("tbl" => "news_cat", "field" => "idc", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
     array("tbl" => "news_item", "field" => "idi", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
     array("tbl" => "news_sub", "field" => "ids", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
     array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", "menu" => true),
-
     /* Bài viết */
     array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tuyen-dung", "type" => "tuyen-dung", "menu" => true),
     array("tbl" => "news", "field" => "id", "source" => "news", "com" => "chinh-sach", "type" => "chinh-sach", "menu" => false),
-
     /* Trang tĩnh */
     array("tbl" => "static", "field" => "id", "source" => "static", "com" => "gioi-thieu", "type" => "gioi-thieu", "menu" => true),
-
     /* Liên hệ */
-    array("tbl" => "", "field" => "id", "source" => "", "com" => "lien-he", "type" => "", "menu" => true),
+    array("tbl" => "static", "field" => "id", "source" => "", "com" => "lien-he", "type" => "lien-he", "menu" => true),
 );
-
 /* Find data */
 if (!empty($com) && !in_array($com, ['tim-kiem', 'account', 'sitemap'])) {
     foreach ($requick as $k => $v) {
@@ -140,10 +114,8 @@ if (!empty($com) && !in_array($com, ['tim-kiem', 'account', 'sitemap'])) {
         $urlType = (!empty($v['type'])) ? $v['type'] : '';
         $urlField = (!empty($v['field'])) ? $v['field'] : '';
         $urlCom = (!empty($v['com'])) ? $v['com'] : '';
-
         if (!empty($urlTbl) && !in_array($urlTbl, ['static', 'photo'])) {
             $row = $d->rawQueryOne("select id from #_$urlTbl where $sluglang = ? and type = ? and find_in_set('hienthi',status) limit 0,1", array($com, $urlType));
-
             if (!empty($row['id'])) {
                 $_GET[$urlField] = $row['id'];
                 $com = $urlCom;
@@ -152,7 +124,6 @@ if (!empty($com) && !in_array($com, ['tim-kiem', 'account', 'sitemap'])) {
         }
     }
 }
-
 /* Switch coms */
 switch ($com) {
     case 'doihinh':
@@ -176,7 +147,6 @@ switch ($com) {
         $seo->set('type', 'object');
         $titleMain = lienhe;
         break;
-
     case 'gioi-thieu':
         $source = "static";
         $template = "static/static";
@@ -184,7 +154,6 @@ switch ($com) {
         $seo->set('type', 'article');
         $titleMain = gioithieu;
         break;
-
     case 'tin-tuc':
         $source = "news";
         $template = isset($_GET['id']) ? "news/news_detail" : "news/news";
@@ -192,7 +161,6 @@ switch ($com) {
         $type = $com;
         $titleMain = tintuc;
         break;
-
     case 'tuyen-dung':
         $source = "news";
         $template = isset($_GET['id']) ? "news/news_detail" : "news/news";
@@ -200,7 +168,6 @@ switch ($com) {
         $type = $com;
         $titleMain = tuyendung;
         break;
-
     case 'chinh-sach':
         $source = "news";
         $template = isset($_GET['id']) ? "news/news_detail" : "";
@@ -208,7 +175,6 @@ switch ($com) {
         $type = $com;
         $titleMain = null;
         break;
-
     case 'thuong-hieu':
         $source = "product";
         $template = "product/product";
@@ -216,7 +182,6 @@ switch ($com) {
         $type = 'san-pham';
         $titleMain = null;
         break;
-
     case 'yeu-thich':
         if(!LIKESITE) $func->redirect('index.php');
         $source = "product";
@@ -225,7 +190,6 @@ switch ($com) {
         $type = $com;
         $titleMain = sanpham;
         break;
-
     case 'san-pham':
         $source = "product";
         $template = isset($_GET['id']) ? "product/product_detail" : "product/product";
@@ -233,14 +197,12 @@ switch ($com) {
         $type = $com;
         $titleMain = sanpham;
         break;
-
     case 'tim-kiem':
         $source = "search";
         $template = "product/product";
         $seo->set('type', 'object');
         $titleMain = timkiem;
         break;
-
     case 'tags-san-pham':
         $source = "tags";
         $template = "product/product";
@@ -249,7 +211,6 @@ switch ($com) {
         $seo->set('type', 'object');
         $titleMain = null;
         break;
-
     case 'tags-tin-tuc':
         $source = "tags";
         $template = "news/news";
@@ -258,7 +219,6 @@ switch ($com) {
         $seo->set('type', 'object');
         $titleMain = null;
         break;
-
     case 'thu-vien-anh':
         $source = "product";
         $template = isset($_GET['id']) ? "album/album_detail" : "album/album";
@@ -266,7 +226,6 @@ switch ($com) {
         $type = $com;
         $titleMain = thuvienanh;
         break;
-    
     case 'video':
         $source = "video";
         $template = "video/video";
@@ -274,7 +233,6 @@ switch ($com) {
         $seo->set('type', 'object');
         $titleMain = "Video";
         break;
-
     case 'gio-hang':
         if(!CARTSITE) $func->redirect($configBase);
         $source = "order";
@@ -282,11 +240,9 @@ switch ($com) {
         $titleMain = giohang;
         $seo->set('type', 'object');
         break;
-
     case 'account':
         $source = "user";
         break;
-
     case 'ngon-ngu':
         if (isset($lang)) {
             switch ($lang) {
@@ -303,32 +259,26 @@ switch ($com) {
         }
         $func->redirect($_SERVER['HTTP_REFERER']);
         break;
-
     case 'sitemap':
         include_once LIBRARIES . "sitemap.php";
         exit();
-
     case '':
     case 'index':
         $source = "index";
         $template = "index/index";
         $seo->set('type', 'website');
         break;
-
     default:
         header('HTTP/1.0 404 Not Found', true, 404);
         include("404.php");
         exit();
 }
-
 /* Require datas for all page */
 require_once SOURCES . "allpage.php";
-
 /* Include sources */
 if (!empty($source)) {
     include SOURCES . $source . ".php";
 }
-
 /* Include sources */
 if (empty($template)) {
     header('HTTP/1.0 404 Not Found', true, 404);
