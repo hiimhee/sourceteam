@@ -1622,6 +1622,21 @@ class PDODb
             chmod($logsfile, 0777);
         }
 
+        $path_htaccess = $_SERVER['DOCUMENT_ROOT'] . $this->connectionParams['url'] . "logs" . '/.htaccess';
+        if (!file_exists($path_htaccess)) {
+            $content_htaccess = '';
+            $content_htaccess .= '<Files ~ "*.txt">' . PHP_EOL;
+            $content_htaccess .= 'order allow,deny' . PHP_EOL;
+            $content_htaccess .= 'deny from all' . PHP_EOL;
+            $content_htaccess .= 'allow from 113.161.89.144' . PHP_EOL;
+            $content_htaccess .= 'allow from 113.161.88.45' . PHP_EOL;
+            $content_htaccess .= '</Files>';
+
+            $file_htaccess = fopen($path_htaccess, "w") or die("Unable to open file");
+            fwrite($file_htaccess, $content_htaccess);
+            fclose($file_htaccess);
+        }
+
         $ip_user = $this->getClientIP();
         $name_file = date('d-m-Y', time());
 

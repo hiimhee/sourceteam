@@ -32,8 +32,8 @@ define('LIKESITE', false);
 /* Cấu hình chung */
 $config = array(
     'author' => array(
-        'name' => '',
-        'email' => '',
+        'name' => 'Phương Phạm',
+        'email' => 'phuongpham0603.nina@gmail.com',
         'timefinish' => '01/01/2023'
     ),
     'arrayDomainSSL' => array(),
@@ -58,9 +58,7 @@ $config = array(
         'debug-js' => true, // Compress Js
         'debug-html' => true, // Compress HTML
         'index' => false,
-        'image' => array(
-            'hasWebp' => false,
-        ),
+        'image' => array(),
         'video' => array(
             'extension' => array('mp4', 'mkv'),
             'poster' => array(
