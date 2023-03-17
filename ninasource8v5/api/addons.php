@@ -1,8 +1,6 @@
 <?php
 include "config.php";
-
 $type = (!empty($_GET["type"])) ? htmlspecialchars($_GET["type"]) : '';
-
  if($type == 'video-slick') {
     $videonb = $d->rawQuery("select link_video, id, name$lang from #_photo where type = ? and act <> ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb, id desc",array('video','photo_static')); if(count($videonb)) { ?>
     <div class="load-video-tc w-clear">
@@ -100,8 +98,6 @@ $type = (!empty($_GET["type"])) ? htmlspecialchars($_GET["type"]) : '';
     <?php } ?>
     </div>
 <?php } } ?>
-
-
 <?php if($type == 'video-img-slick') {
     $videonb = $d->rawQuery("select link_video, id, name$lang,photo from #_photo where type = ? and act <> ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb, id desc",array('video','photo_static')); if(count($videonb)) { ?>
     <div class="load-video-tc w-clear">
@@ -201,8 +197,6 @@ $type = (!empty($_GET["type"])) ? htmlspecialchars($_GET["type"]) : '';
     <?php } ?>
     </div>
 <?php } } 
-
-
 if ($type == 'video-fotorama') {
     $video_home = $d->rawQuery("select link_video, id, name$lang from #_photo where type = ? and act <> ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb, id desc", array('video', 'photo_static'));
     if (count($video_home)) { ?>
@@ -213,7 +207,6 @@ if ($type == 'video-fotorama') {
         </div>
     <?php }
 }
-
 if ($type == 'video-select') {
     $video_home = $d->rawQuery("select link_video, id, name$lang from #_photo where type = ? and act <> ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb, id desc", array('video', 'photo_static'));
     if (count($video_home)) { ?>
@@ -227,11 +220,9 @@ if ($type == 'video-select') {
         </select>
     <?php }
 }
-
 if ($type == 'footer-map') {
     echo $func->decodeHtmlChars($optsetting['coords_iframe']);
 }
-
 if ($type == 'fanpage-facebook') { ?>
     <div class="fb-page" data-href="<?= $optsetting['fanpage'] ?>" data-tabs="timeline" data-width="300" data-height="200" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
         <div class="fb-xfbml-parse-ignore">
@@ -241,7 +232,6 @@ if ($type == 'fanpage-facebook') { ?>
         </div>
     </div>
 <?php }
-
 if ($type == 'messages-facebook') { ?>
     <div class="js-facebook-messenger-box onApp rotate bottom-right cfm rubberBand animated" data-anim="rubberBand">
         <svg id="fb-msng-icon" data-name="messenger icon" xmlns="//www.w3.org/2000/svg" viewBox="0 0 30.47 30.66">
@@ -260,8 +250,10 @@ if ($type == 'messages-facebook') { ?>
         </div>
     </div>
 <?php }
-
 if ($type == 'script-main') { ?>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0" nonce="K6eeO17s"></script>
+    <?php /*
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {
@@ -274,6 +266,7 @@ if ($type == 'script-main') { ?>
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+    */ ?>
     <script src="//sp.zalo.me/plugins/sdk.js"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55e11040eb7c994c"></script>
 <?php } ?>
