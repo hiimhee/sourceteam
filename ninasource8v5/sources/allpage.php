@@ -31,7 +31,7 @@ $counter = $statistic->getCounter();
 $online = $statistic->getOnline();
 
 /* Newsletter */
-if (!empty($_POST['submit-newsletter'])) {
+if (isset($_POST['submit-newsletter'])) {
     $responseCaptcha = $_POST['recaptcha_response_newsletter'];
     $resultCaptcha = $func->checkRecaptcha($responseCaptcha);
     $scoreCaptcha = (!empty($resultCaptcha['score'])) ? $resultCaptcha['score'] : 0;

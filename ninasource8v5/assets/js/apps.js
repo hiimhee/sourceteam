@@ -3,6 +3,39 @@ validateForm('validation-newsletter');
 if(CARTSITE==true) validateForm('validation-cart');
 // validateForm('validation-user');
 validateForm('validation-contact');
+$.fn.exists = function(){
+    return this.length;
+};
+// if($(".doitacOwl").exists())
+// {
+//     $('.doitacOwl').owlCarousel({
+//         items: 6,
+//         rewind: false,
+//         autoplay: true,
+//         loop: true,
+//         lazyLoad: true,
+//         mouseDrag: true,
+//         touchDrag: true,
+//         margin: 10,
+//         smartSpeed: 250,
+//         autoplaySpeed: 1000,
+//         nav: false,
+//         dots: false,
+//         responsiveClass:true,
+//         responsiveRefreshRate: 200,
+//         responsive:{
+//             0:{
+//                 items:2 , margin: 10
+//             },
+//             600:{
+//                 items:4 , margin: 10
+//             },
+//             1000:{
+//                 items:6 , margin: 10
+//             }
+//         }
+//     });
+// }
 /* Lazys */
 NN_FRAMEWORK.Lazys = function () {
 	if (isExist($('.lazy'))) {
