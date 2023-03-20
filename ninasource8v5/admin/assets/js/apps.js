@@ -754,16 +754,16 @@ function slugCheck() {
 /* Reader image */
 function readImage(inputFile, elementPhoto) {
 	if (inputFile[0].files[0]) {
-		if (inputFile[0].files[0].name.match(/.(jpg|jpeg|png|gif)$/i)) {
+		if (inputFile[0].files[0].name.match(/.(jpg|jpeg|png|gif|webp|avif)$/i)) {
 			var size = parseInt(inputFile[0].files[0].size) / 1024;
-			if (size <= 4096) {
+			if (size <= 10240) {
 				var reader = new FileReader();
 				reader.onload = function (e) {
 					$(elementPhoto).attr('src', e.target.result);
 				};
 				reader.readAsDataURL(inputFile[0].files[0]);
 			} else {
-				notifyDialog('Dung lượng hình ảnh lớn. Dung lượng cho phép <= 4MB ~ 4096KB');
+				notifyDialog('Dung lượng hình ảnh lớn. Dung lượng cho phép <= 10MB ~ 10240KB');
 				return false;
 			}
 		} else {
@@ -1439,7 +1439,6 @@ $(document).ready(function () {
 			var status = $(this).data('status');
 			var parentTable = $(this).parents('table');
 			var input = parentTable.find('input.custom-control-input[data-attr='+status+']');
-
 			if ($(this).is(':checked')) {
 				input.each(function () {
 					var id = $(this).attr('data-id');
@@ -1520,7 +1519,6 @@ $(document).ready(function () {
 			var table = $(this).attr('data-table');
 			var attr = $(this).attr('data-attr');
 			var $this = $(this);
-
 			$.ajax({
 				url: 'api/status.php',
 				type: 'POST',
@@ -1539,14 +1537,11 @@ $(document).ready(function () {
 						$this.prop('checked', true);
 						checkallRefresh('#status-checkall','.custom-control-input',attr,id,true);
 					}
-
 				}
 			});
-
 			return false;
 		});
 	}
-
 	function checkallRefresh(ca,t,s,ne,ic){
 		if(ic){
 			var ischeck = true;
