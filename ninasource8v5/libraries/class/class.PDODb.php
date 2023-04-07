@@ -1615,39 +1615,39 @@ class PDODb
     }
     public function createLogs($user = 'Unnamed', $act = '', $com = '', $id = 0)
     {
-        $logsfile = $_SERVER['DOCUMENT_ROOT'] . $this->connectionParams['url'] . "logs";
+        // $logsfile = $_SERVER['DOCUMENT_ROOT'] . $this->connectionParams['url'] . "logs";
 
-        if (!is_dir($logsfile)) {
-            mkdir($logsfile, 0777, true);
-            chmod($logsfile, 0777);
-        }
+        // if (!is_dir($logsfile)) {
+        //     mkdir($logsfile, 0777, true);
+        //     chmod($logsfile, 0777);
+        // }
 
-        $path_htaccess = $_SERVER['DOCUMENT_ROOT'] . $this->connectionParams['url'] . "logs" . '/.htaccess';
-        if (!file_exists($path_htaccess)) {
-            $content_htaccess = '';
-            $content_htaccess .= '<Files ~ "*.txt">' . PHP_EOL;
-            $content_htaccess .= 'order allow,deny' . PHP_EOL;
-            $content_htaccess .= 'deny from all' . PHP_EOL;
-            $content_htaccess .= 'allow from 113.161.89.144' . PHP_EOL;
-            $content_htaccess .= 'allow from 113.161.88.45' . PHP_EOL;
-            $content_htaccess .= '</Files>';
+        // $path_htaccess = $_SERVER['DOCUMENT_ROOT'] . $this->connectionParams['url'] . "logs" . '/.htaccess';
+        // if (!file_exists($path_htaccess)) {
+        //     $content_htaccess = '';
+        //     $content_htaccess .= '<Files ~ "*.txt">' . PHP_EOL;
+        //     $content_htaccess .= 'order allow,deny' . PHP_EOL;
+        //     $content_htaccess .= 'deny from all' . PHP_EOL;
+        //     $content_htaccess .= 'allow from 113.161.89.144' . PHP_EOL;
+        //     $content_htaccess .= 'allow from 113.161.88.45' . PHP_EOL;
+        //     $content_htaccess .= '</Files>';
 
-            $file_htaccess = fopen($path_htaccess, "w") or die("Unable to open file");
-            fwrite($file_htaccess, $content_htaccess);
-            fclose($file_htaccess);
-        }
+        //     $file_htaccess = fopen($path_htaccess, "w") or die("Unable to open file");
+        //     fwrite($file_htaccess, $content_htaccess);
+        //     fclose($file_htaccess);
+        // }
 
-        $ip_user = $this->getClientIP();
-        $name_file = date('d-m-Y', time());
+        // $ip_user = $this->getClientIP();
+        // $name_file = date('d-m-Y', time());
 
-        $file = fopen($logsfile . "/" . $name_file . ".txt", "a");
-        $data_old = file_get_contents($logsfile . "/" . $name_file . ".txt");
-        $time_act = date('H:i:s d/m/Y', time());
-        fwrite($file, $ip_user . "(" . $user . ")" . "--" . $act . "--" . $com . "(" . $id . ") (" . $time_act . ")\n");
-        fclose($file);
+        // $file = fopen($logsfile . "/" . $name_file . ".txt", "a");
+        // $data_old = file_get_contents($logsfile . "/" . $name_file . ".txt");
+        // $time_act = date('H:i:s d/m/Y', time());
+        // fwrite($file, $ip_user . "(" . $user . ")" . "--" . $act . "--" . $com . "(" . $id . ") (" . $time_act . ")\n");
+        // fclose($file);
 
-        $name_file_old = date('d-m-Y', time() - 7776000);
-        if (file_exists($logsfile . "/" . $name_file_old . ".txt")) unlink($logsfile . "/" . $name_file_old . ".txt");
+        // $name_file_old = date('d-m-Y', time() - 7776000);
+        // if (file_exists($logsfile . "/" . $name_file_old . ".txt")) unlink($logsfile . "/" . $name_file_old . ".txt");
     }
     public function getClientIP()
     {
